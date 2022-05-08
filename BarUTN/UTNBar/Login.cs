@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
-using Entidades;
 
 namespace UTNBar
 {
@@ -30,17 +23,25 @@ namespace UTNBar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (btnSeCargoEmp)
+            if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
             {
-            Usuario usuario = CargarEmpleado();
-            Acceso acceso = new Acceso(usuario);
-            acceso.ShowDialog();
+
+                if (btnSeCargoEmp)
+                {
+                    Usuario usuario = CargarEmpleado();
+                    Acceso acceso = new Acceso(usuario);
+                    acceso.ShowDialog();
+                }
+                else if (btnSeCargoAdm)
+                {
+                    Usuario usuario = CargarAdministrador();
+                    Acceso acceso = new Acceso(usuario);
+                    acceso.ShowDialog();
+                }
             }
-            else if (btnSeCargoAdm)
+            else
             {
-                Usuario usuario = CargarAdministrador();
-                Acceso acceso = new Acceso(usuario);
-                acceso.ShowDialog();
+                MessageBox.Show("Usuario incorrecto");
             }
         }
 
@@ -75,6 +76,13 @@ namespace UTNBar
             btnSeCargoEmp = false;
         }
 
-
+        public bool CheckearUsuario(string usuario, string password)
+        {
+            if ((usuario == "aperez" && password == "arielsito") || (usuario == "lmessi" && password == "copaamerica"))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

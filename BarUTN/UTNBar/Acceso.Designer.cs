@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acceso));
             this.btnMesa1 = new System.Windows.Forms.Button();
             this.btnMesa2 = new System.Windows.Forms.Button();
             this.btnMesa3 = new System.Windows.Forms.Button();
@@ -240,20 +241,28 @@
             // lblMesas
             // 
             this.lblMesas.AutoSize = true;
-            this.lblMesas.Location = new System.Drawing.Point(12, 9);
+            this.lblMesas.BackColor = System.Drawing.Color.Transparent;
+            this.lblMesas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMesas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMesas.Location = new System.Drawing.Point(12, 15);
             this.lblMesas.Name = "lblMesas";
-            this.lblMesas.Size = new System.Drawing.Size(40, 15);
+            this.lblMesas.Size = new System.Drawing.Size(58, 23);
             this.lblMesas.TabIndex = 20;
             this.lblMesas.Text = "Mesas";
+            this.lblMesas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBarra
             // 
             this.lblBarra.AutoSize = true;
+            this.lblBarra.BackColor = System.Drawing.Color.Transparent;
+            this.lblBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBarra.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBarra.Location = new System.Drawing.Point(12, 339);
             this.lblBarra.Name = "lblBarra";
-            this.lblBarra.Size = new System.Drawing.Size(34, 15);
+            this.lblBarra.Size = new System.Drawing.Size(50, 23);
             this.lblBarra.TabIndex = 21;
             this.lblBarra.Text = "Barra";
+            this.lblBarra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStock
             // 
@@ -279,6 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(899, 450);
             this.Controls.Add(this.btnVerEmp);
             this.Controls.Add(this.btnStock);
@@ -304,7 +314,13 @@
             this.Controls.Add(this.btnMesa3);
             this.Controls.Add(this.btnMesa2);
             this.Controls.Add(this.btnMesa1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Acceso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Acceso_Load);
             this.ResumeLayout(false);

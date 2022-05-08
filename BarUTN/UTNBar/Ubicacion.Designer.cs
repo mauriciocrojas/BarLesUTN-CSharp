@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ubicacion));
             this.cmbComidas = new System.Windows.Forms.ComboBox();
             this.cmbBebidas = new System.Windows.Forms.ComboBox();
             this.lblComidas = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(531, 270);
             this.Controls.Add(this.btnHacerPedido);
             this.Controls.Add(this.nudBebidas);
@@ -110,7 +112,12 @@
             this.Controls.Add(this.lblComidas);
             this.Controls.Add(this.cmbBebidas);
             this.Controls.Add(this.cmbComidas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Ubicacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubicacion";
             this.Load += new System.EventHandler(this.Ubicacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudComidas)).EndInit();

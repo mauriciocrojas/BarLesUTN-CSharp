@@ -62,14 +62,12 @@ namespace UTNBar
 
         private void btnMesa1_Click(object sender, EventArgs e)
         {
-            //UbicacionBar ubicacionBar = new Mesa(1);
             Ubicacion ubicacionForm = new Ubicacion(1);
             ubicacionForm.ShowDialog(); 
         }
 
         private void btnBarra16_Click(object sender, EventArgs e)
         {
-                //UbicacionBar ubicacionBar = new Barra(16);
                 Ubicacion ubicacionForm = new Ubicacion(16);
                 ubicacionForm.ShowDialog();
         }

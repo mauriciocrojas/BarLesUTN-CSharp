@@ -22,11 +22,11 @@ namespace Entidades
 
         public static void HardcodearEmpleados()
         {
-            Empleado empleado1 = new Empleado("Juan", "Perez", "jperez", "juanse");
-            Empleado empleado2 = new Empleado("Gianluca", "Rian", "grian", "gianse");
-            Empleado empleado3 = new Empleado("Orlando", "Vietri", "ovietri", "juanse");
-            Empleado empleado4 = new Empleado("Pedro", "Gerez", "pgerez", "pendre");
-            Empleado empleado5 = new Empleado("Hector", "Pedroso", "hpedroso", "hecter");
+            Empleado empleado1 = new Empleado("Ariel", "Perez", "aperez", "arielsito");
+            Empleado empleado2 = new Empleado("Brian", "Lega", "blega", "thebrian");
+            Empleado empleado3 = new Empleado("Carlos", "Bom", "cbom", "carlitos");
+            Empleado empleado4 = new Empleado("Denver", "Hetok", "dhetok", "denverland");
+            Empleado empleado5 = new Empleado("Emul", "Asion", "easion", "emular");
 
 
             listaEmpleados.Add(empleado1);

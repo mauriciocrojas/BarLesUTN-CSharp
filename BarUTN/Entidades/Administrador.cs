@@ -18,8 +18,8 @@ namespace Entidades
 
         public static void HardcodearAdministradores()
         {
-            Administrador administrador1 = new Administrador("Napoleon", "Bonucci", "nbonucci", "napo");
-            Administrador administrador2 = new Administrador("Marcos", "Galperin", "mgalperin", "marcus");
+            Administrador administrador1 = new Administrador("Lionel", "Messi", "lmessi", "copaamerica");
+            Administrador administrador2 = new Administrador("Charly", "Garcia", "cgarcia", "botaslocas");
 
             listaAdministradores.Add(administrador1);
             listaAdministradores.Add(administrador2);
@@ -37,9 +37,7 @@ namespace Entidades
 
             foreach (Administrador administrador in listaAdministradores)
             {
-                //string auxSal = comida.sinSal ? "sin sal" : "con sal";
                 sb.AppendLine($"{administrador.MostrarDato()}");
-               //sb.AppendLine($"Empleado: Nombre: {empleado.nombre}, Nombre: {empleado.apellido}, usuario: {empleado.user}");
             }
 
             return sb.ToString();
