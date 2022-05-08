@@ -13,15 +13,12 @@ namespace UTNBar
 {
     public partial class Stock : Form
     {
-        private string nameWindow;
-        public Stock()
+        private string nombreVentanaStock;
+
+        public Stock (string nombreVentanaStock)
         {
             InitializeComponent();
-        }
-
-        public Stock (string nameWindow):this()
-        {
-            this.nameWindow = nameWindow;
+            this.nombreVentanaStock = nombreVentanaStock;
         }
 
         private void Stock_Load(object sender, EventArgs e)
@@ -32,8 +29,8 @@ namespace UTNBar
             bebidas.HardcodearBebidas();
             comidas.HardcodearComidas();
 
-            this.Text = this.nameWindow;
-            this.richTextBox1.Text = bebidas.MostrarStock() + comidas.MostrarStock();
+            this.Text = this.nombreVentanaStock;
+            this.rchListaStock.Text = bebidas.MostrarStock() + comidas.MostrarStock();
 
         }
     }

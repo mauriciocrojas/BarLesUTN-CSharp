@@ -30,10 +30,10 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rchListaStock = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,14 +55,14 @@
             this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregarProducto
             // 
-            this.button3.Location = new System.Drawing.Point(16, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Agregar producto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(16, 12);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(110, 23);
+            this.btnAgregarProducto.TabIndex = 3;
+            this.btnAgregarProducto.Text = "Agregar producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -78,23 +78,23 @@
             this.numericUpDown1.Size = new System.Drawing.Size(110, 23);
             this.numericUpDown1.TabIndex = 5;
             // 
-            // richTextBox1
+            // rchListaStock
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(157, 21);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(336, 220);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.rchListaStock.Location = new System.Drawing.Point(157, 21);
+            this.rchListaStock.Name = "rchListaStock";
+            this.rchListaStock.Size = new System.Drawing.Size(336, 220);
+            this.rchListaStock.TabIndex = 6;
+            this.rchListaStock.Text = "";
             // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 336);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rchListaStock);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Stock";
@@ -109,9 +109,9 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rchListaStock;
     }
 }

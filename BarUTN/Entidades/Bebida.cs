@@ -16,7 +16,7 @@ namespace Entidades
             listaBebidas = new List<Bebida>();
 
         }
-        public Bebida(string nombre, int peso, Etipo tipo, int stock) : base(nombre, stock)
+        public Bebida(string nombre, int peso, Etipo tipo, int stock, int precio) : base(nombre, stock, precio)
         {
             this.peso = peso;
             this.tipo = tipo;
@@ -25,9 +25,9 @@ namespace Entidades
 
         public void HardcodearBebidas()
         {
-            Bebida bebida1 = new Bebida("Gin tonic", 375, Etipo.Alcoholicas, 20);
-            Bebida bebida2 = new Bebida("Seven Up", 500, Etipo.Gasificadas, 30);
-            Bebida bebida3 = new Bebida("Agua sin gas", 400, Etipo.Aguas, 40);
+            Bebida bebida1 = new Bebida("Gin tonic", 375, Etipo.Alcoholicas, 20, 500);
+            Bebida bebida2 = new Bebida("Seven Up", 500, Etipo.Gasificadas, 30, 300);
+            Bebida bebida3 = new Bebida("Agua sin gas", 400, Etipo.Aguas, 40, 250);
 
             listaBebidas.Add(bebida1);
             listaBebidas.Add(bebida2);
@@ -40,7 +40,7 @@ namespace Entidades
 
             foreach (Bebida bebida in listaBebidas)
             {
-                sb.Append($"Bebida: {bebida.nombre}, {bebida.peso}ml, tipo: {bebida.tipo}, stock: {bebida.stock}\n");
+                sb.Append($"Bebida: {bebida.nombre} ${bebida.precio}, {bebida.peso}ml, tipo: {bebida.tipo}, stock: {bebida.stock}\n");
             }
 
             return sb.ToString();

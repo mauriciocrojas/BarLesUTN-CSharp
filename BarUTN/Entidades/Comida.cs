@@ -13,7 +13,7 @@ namespace Entidades
             listaComidas = new List<Comida>();
 
         }
-        public Comida(string nombre, bool sinSal, int stock) : base(nombre, stock)
+        public Comida(string nombre, bool sinSal, int stock, int precio) : base(nombre, stock, precio)
         {
             this.sinSal = sinSal;
             listaComidas = new List<Comida>();
@@ -21,9 +21,9 @@ namespace Entidades
 
         public void HardcodearComidas()
         {
-            Comida comida1 = new Comida("Verduras al vapor", true, 15);
-            Comida comida2 = new Comida("Pastel de choclo", false, 30);
-            Comida comida3 = new Comida("Merluza con puré", false, 45);
+            Comida comida1 = new Comida("Verduras al vapor", true, 15, 700);
+            Comida comida2 = new Comida("Pastel de choclo", false, 30, 900);
+            Comida comida3 = new Comida("Merluza con puré", false, 45, 800);
 
             listaComidas.Add(comida1);
             listaComidas.Add(comida2);
@@ -38,7 +38,7 @@ namespace Entidades
             foreach (Comida comida in listaComidas)
             {
                 string auxSal = comida.sinSal ? "sin sal" : "con sal";
-                sb.Append($"Comida: {comida.nombre}, Producto: {auxSal}, stock: {comida.stock}\n");
+                sb.Append($"Comida: {comida.nombre} ${comida.precio}, Producto: {auxSal}, stock: {comida.stock}\n");
             }
 
             return sb.ToString();

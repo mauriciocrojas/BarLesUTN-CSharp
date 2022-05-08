@@ -44,3 +44,4 @@ C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.pdb
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.genruntimeconfig.cache
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\ref\UTNBar.dll
+C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Ubicacion.resources
