@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTNBar", "UTNBar\UTNBar.csproj", "{FBDC23B4-1BDC-455A-BB7B-77E2165FEB2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{DF521848-0B5D-4AAB-B159-F2415FD3A387}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBDC23B4-1BDC-455A-BB7B-77E2165FEB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDC23B4-1BDC-455A-BB7B-77E2165FEB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDC23B4-1BDC-455A-BB7B-77E2165FEB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDC23B4-1BDC-455A-BB7B-77E2165FEB2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF521848-0B5D-4AAB-B159-F2415FD3A387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF521848-0B5D-4AAB-B159-F2415FD3A387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF521848-0B5D-4AAB-B159-F2415FD3A387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF521848-0B5D-4AAB-B159-F2415FD3A387}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10C753D4-FFE6-4B9E-B72E-1819819463C6}
+	EndGlobalSection
+EndGlobal
