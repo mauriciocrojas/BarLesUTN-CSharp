@@ -32,7 +32,6 @@ C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\bin\Debug\net5.0-
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.csproj.AssemblyReference.cache
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Acceso.resources
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Login.resources
-C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Stock.resources
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.csproj.GenerateResource.cache
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.AssemblyInfoInputs.cache
@@ -46,3 +45,5 @@ C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\ref\UTNBar.dll
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Ubicacion.resources
 C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.Properties.Resources.resources
+C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.AgregarProducto.resources
+C:\Users\maurojas\Documents\Alumni\Proyectos\Bar\BarUTN\UTNBar\obj\Debug\net5.0-windows\UTNBar.StockProductos.resources

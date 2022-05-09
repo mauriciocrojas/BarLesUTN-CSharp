@@ -5,10 +5,9 @@ namespace Entidades
 {
     public class Bebida : Stock
     {
-        public enum Etipo { Alcoholicas, Gasificadas, Aguas };
-        public List<Bebida> listaBebidas;
+        public static List<Bebida> listaBebidas;
 
-        protected int peso;
+        protected decimal peso;
         protected Etipo tipo;
 
         public Bebida()
@@ -16,12 +15,13 @@ namespace Entidades
             listaBebidas = new List<Bebida>();
 
         }
-        public Bebida(string nombre, int peso, Etipo tipo, int stock, int precio) : base(nombre, stock, precio)
+        public Bebida(string nombre, decimal peso, Etipo tipo, decimal stock, decimal precio) : base(nombre, stock, precio)
         {
             this.peso = peso;
             this.tipo = tipo;
             listaBebidas = new List<Bebida>();
         }
+
 
         public void HardcodearBebidas()
         {
@@ -44,6 +44,12 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+
+        public static void AgregarNuevaBebida(string nombre, decimal peso, Etipo tipo, decimal stock, decimal precio)
+        {
+            Bebida bebida = new Bebida(nombre, peso, tipo, stock, precio);
+            listaBebidas.Add(bebida);
         }
     }
 }

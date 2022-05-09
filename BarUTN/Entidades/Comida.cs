@@ -6,14 +6,14 @@ namespace Entidades
     public class Comida : Stock
     {
         protected bool sinSal;
-        public List<Comida> listaComidas;
+        public static List<Comida> listaComidas;
 
         public Comida()
         {
             listaComidas = new List<Comida>();
 
         }
-        public Comida(string nombre, bool sinSal, int stock, int precio) : base(nombre, stock, precio)
+        public Comida(string nombre, bool sinSal, decimal stock, decimal precio) : base(nombre, stock, precio)
         {
             this.sinSal = sinSal;
             listaComidas = new List<Comida>();
@@ -30,6 +30,8 @@ namespace Entidades
             listaComidas.Add(comida3);
         }
 
+
+
         public override string MostrarStock()
         {
             StringBuilder sb = new StringBuilder();
@@ -42,6 +44,12 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+
+        public static void AgregarNuevaComida(string nombre, bool sinSal, decimal stock, decimal precio)
+        {
+            Comida comida = new Comida(nombre, sinSal, stock, precio);
+            listaComidas.Add(comida);
         }
     }
 }

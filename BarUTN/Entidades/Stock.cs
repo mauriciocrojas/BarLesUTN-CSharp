@@ -5,14 +5,14 @@ namespace Entidades
     public abstract class Stock
     {
         protected string nombre;
-        protected int stock;
-        protected int precio;
+        protected decimal stock;
+        protected decimal precio;
         
         public Stock()
         {
 
         }
-        public Stock(string nombre, int stock, int precio)
+        public Stock(string nombre, decimal stock, decimal precio)
         {
             this.nombre = nombre;
             this.stock = stock;

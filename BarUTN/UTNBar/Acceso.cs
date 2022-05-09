@@ -24,6 +24,7 @@ namespace UTNBar
             else
             {
                 this.btnVerEmp.Enabled = false;
+                this.btnAgregarProducto.Enabled = false;
             }
         }
 
@@ -54,11 +55,6 @@ namespace UTNBar
             
         }
 
-        private void btnStock_Click(object sender, EventArgs e)
-        {
-            Stock stock = new Stock("Menú de Stock");
-            stock.ShowDialog();
-        }
 
         private void btnMesa1_Click(object sender, EventArgs e)
         {
@@ -70,6 +66,18 @@ namespace UTNBar
         {
                 Ubicacion ubicacionForm = new Ubicacion(16);
                 ubicacionForm.ShowDialog();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            AgregarProducto stock = new AgregarProducto("Menú de stock y agregado");
+            stock.ShowDialog();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            StockProductos stockProductos = new StockProductos();
+            stockProductos.ShowDialog();
         }
     }
 }
