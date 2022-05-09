@@ -24,7 +24,6 @@ namespace UTNBar
             else
             {
                 this.btnVerEmp.Enabled = false;
-                this.btnAgregarProducto.Enabled = false;
             }
         }
 
@@ -52,32 +51,39 @@ namespace UTNBar
             Usuario empleado = new Empleado();
             Empleado.HardcodearEmpleados();
             MessageBox.Show(empleado.MostrarDatos());
-            
+
         }
 
 
         private void btnMesa1_Click(object sender, EventArgs e)
         {
             Ubicacion ubicacionForm = new Ubicacion(1);
-            ubicacionForm.ShowDialog(); 
+            ubicacionForm.ShowDialog();
         }
 
         private void btnBarra16_Click(object sender, EventArgs e)
         {
-                Ubicacion ubicacionForm = new Ubicacion(16);
-                ubicacionForm.ShowDialog();
+            Ubicacion ubicacionForm = new Ubicacion(16);
+            ubicacionForm.ShowDialog();
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            AgregarProducto stock = new AgregarProducto("Menú de stock y agregado");
-            stock.ShowDialog();
+
+            if (tipoUsuario is Administrador)
+            {
+                ControlStock stock = new ControlStock(tipoUsuario);
+                stock.ShowDialog();
+
+
+            }
+            else
+            {
+                ControlStock stock = new ControlStock(tipoUsuario);
+                stock.ShowDialog();
+
+            }
         }
 
-        private void btnStock_Click(object sender, EventArgs e)
-        {
-            StockProductos stockProductos = new StockProductos();
-            stockProductos.ShowDialog();
-        }
     }
 }

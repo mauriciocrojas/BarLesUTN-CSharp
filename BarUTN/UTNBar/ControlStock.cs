@@ -4,14 +4,15 @@ using System.Windows.Forms;
 
 namespace UTNBar
 {
-    public partial class AgregarProducto : Form
+    public partial class ControlStock : Form
     {
-        private string nombreVentanaStock;
+        Usuario tipoUsuario;
 
-        public AgregarProducto(string nombreVentanaStock)
+
+        public ControlStock(Usuario tipoUsuario)
         {
             InitializeComponent();
-            this.nombreVentanaStock = nombreVentanaStock;
+            this.tipoUsuario = tipoUsuario;
         }
 
         private void Stock_Load(object sender, EventArgs e)
@@ -34,9 +35,20 @@ namespace UTNBar
             bebidas.HardcodearBebidas();
             comidas.HardcodearComidas();
 
-            this.Text = this.nombreVentanaStock;
             this.rchListaStock.Text = bebidas.MostrarStock() + comidas.MostrarStock();
 
+            if (tipoUsuario is Administrador)
+            {
+                this.grpAdmin.Enabled = true;
+                this.Text = "Menú de Administrador - Stock y agregado";
+
+            }
+            else
+            {
+                this.grpAdmin.Enabled = false;
+                this.Text = "Menú de Empleado - Stock";
+
+            }
 
         }
 
@@ -85,7 +97,7 @@ namespace UTNBar
             Bebida bebida = new Bebida();
             if (this.rdbComida.Checked)
             {
-                bool SiONo = this.cmbSal.SelectedIndex == 1? true : false;
+                bool SiONo = this.cmbSal.SelectedIndex == 1 ? true : false;
 
                 Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
                 this.rchListaStock.Text += bebida.MostrarStock() + comida.MostrarStock();

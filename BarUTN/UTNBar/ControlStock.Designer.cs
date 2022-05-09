@@ -1,6 +1,6 @@
 ﻿namespace UTNBar
 {
-    partial class AgregarProducto
+    partial class ControlStock
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProducto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlStock));
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.nudPrecioComida = new System.Windows.Forms.NumericUpDown();
             this.rchListaStock = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpAdmin = new System.Windows.Forms.GroupBox();
             this.lblStockComida = new System.Windows.Forms.Label();
             this.lblStockBebida = new System.Windows.Forms.Label();
             this.lblTipoBebida = new System.Windows.Forms.Label();
@@ -50,8 +50,9 @@
             this.txtNombreComida = new System.Windows.Forms.TextBox();
             this.rdbBebida = new System.Windows.Forms.RadioButton();
             this.rdbComida = new System.Windows.Forms.RadioButton();
+            this.lblStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioComida)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grpAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockBebida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPesoBebida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockComida)).BeginInit();
@@ -77,40 +78,40 @@
             // 
             // rchListaStock
             // 
-            this.rchListaStock.Location = new System.Drawing.Point(12, 168);
+            this.rchListaStock.Location = new System.Drawing.Point(12, 189);
             this.rchListaStock.Name = "rchListaStock";
             this.rchListaStock.ReadOnly = true;
-            this.rchListaStock.Size = new System.Drawing.Size(481, 135);
+            this.rchListaStock.Size = new System.Drawing.Size(481, 154);
             this.rchListaStock.TabIndex = 6;
             this.rchListaStock.Text = "";
             // 
-            // groupBox1
+            // grpAdmin
             // 
-            this.groupBox1.Controls.Add(this.lblStockComida);
-            this.groupBox1.Controls.Add(this.lblStockBebida);
-            this.groupBox1.Controls.Add(this.lblTipoBebida);
-            this.groupBox1.Controls.Add(this.lblPeso);
-            this.groupBox1.Controls.Add(this.lblSal);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblPrecio);
-            this.groupBox1.Controls.Add(this.cmbTipoBebida);
-            this.groupBox1.Controls.Add(this.cmbSal);
-            this.groupBox1.Controls.Add(this.nudStockBebida);
-            this.groupBox1.Controls.Add(this.nudPesoBebida);
-            this.groupBox1.Controls.Add(this.nudStockComida);
-            this.groupBox1.Controls.Add(this.nudPrecioBebida);
-            this.groupBox1.Controls.Add(this.nudPrecioComida);
-            this.groupBox1.Controls.Add(this.txtNombreBebida);
-            this.groupBox1.Controls.Add(this.txtNombreComida);
-            this.groupBox1.Controls.Add(this.rdbBebida);
-            this.groupBox1.Controls.Add(this.rdbComida);
-            this.groupBox1.Controls.Add(this.btnAgregarProducto);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 150);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Agregar nuevo producto";
+            this.grpAdmin.Controls.Add(this.lblStockComida);
+            this.grpAdmin.Controls.Add(this.lblStockBebida);
+            this.grpAdmin.Controls.Add(this.lblTipoBebida);
+            this.grpAdmin.Controls.Add(this.lblPeso);
+            this.grpAdmin.Controls.Add(this.lblSal);
+            this.grpAdmin.Controls.Add(this.label1);
+            this.grpAdmin.Controls.Add(this.lblPrecio);
+            this.grpAdmin.Controls.Add(this.cmbTipoBebida);
+            this.grpAdmin.Controls.Add(this.cmbSal);
+            this.grpAdmin.Controls.Add(this.nudStockBebida);
+            this.grpAdmin.Controls.Add(this.nudPesoBebida);
+            this.grpAdmin.Controls.Add(this.nudStockComida);
+            this.grpAdmin.Controls.Add(this.nudPrecioBebida);
+            this.grpAdmin.Controls.Add(this.nudPrecioComida);
+            this.grpAdmin.Controls.Add(this.txtNombreBebida);
+            this.grpAdmin.Controls.Add(this.txtNombreComida);
+            this.grpAdmin.Controls.Add(this.rdbBebida);
+            this.grpAdmin.Controls.Add(this.rdbComida);
+            this.grpAdmin.Controls.Add(this.btnAgregarProducto);
+            this.grpAdmin.Location = new System.Drawing.Point(12, 12);
+            this.grpAdmin.Name = "grpAdmin";
+            this.grpAdmin.Size = new System.Drawing.Size(481, 150);
+            this.grpAdmin.TabIndex = 7;
+            this.grpAdmin.TabStop = false;
+            this.grpAdmin.Text = "Agregar nuevo producto";
             // 
             // lblStockComida
             // 
@@ -259,30 +260,41 @@
             this.rdbComida.UseVisualStyleBackColor = true;
             this.rdbComida.Click += new System.EventHandler(this.rdbComida_Click);
             // 
-            // AgregarProducto
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(12, 171);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(36, 15);
+            this.lblStock.TabIndex = 8;
+            this.lblStock.Text = "Stock";
+            // 
+            // ControlStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(505, 336);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(505, 355);
+            this.Controls.Add(this.lblStock);
+            this.Controls.Add(this.grpAdmin);
             this.Controls.Add(this.rchListaStock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AgregarProducto";
+            this.Name = "ControlStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock";
             this.Load += new System.EventHandler(this.Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioComida)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpAdmin.ResumeLayout(false);
+            this.grpAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockBebida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPesoBebida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockComida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioBebida)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,7 +302,7 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.NumericUpDown nudPrecioComida;
         private System.Windows.Forms.RichTextBox rchListaStock;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpAdmin;
         private System.Windows.Forms.NumericUpDown nudPrecioBebida;
         private System.Windows.Forms.TextBox txtNombreBebida;
         private System.Windows.Forms.TextBox txtNombreComida;
@@ -308,5 +320,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.ComboBox cmbTipoBebida;
+        private System.Windows.Forms.Label lblStock;
     }
 }

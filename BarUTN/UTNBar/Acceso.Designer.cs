@@ -51,9 +51,8 @@
             this.btnBarra20 = new System.Windows.Forms.Button();
             this.lblMesas = new System.Windows.Forms.Label();
             this.lblBarra = new System.Windows.Forms.Label();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnControlStock = new System.Windows.Forms.Button();
             this.btnVerEmp = new System.Windows.Forms.Button();
-            this.btnStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMesa1
@@ -265,15 +264,15 @@
             this.lblBarra.Text = "Barra";
             this.lblBarra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAgregarProducto
+            // btnControlStock
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(603, 45);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(98, 56);
-            this.btnAgregarProducto.TabIndex = 22;
-            this.btnAgregarProducto.Text = "Agregar producto";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            this.btnControlStock.Location = new System.Drawing.Point(603, 45);
+            this.btnControlStock.Name = "btnControlStock";
+            this.btnControlStock.Size = new System.Drawing.Size(98, 56);
+            this.btnControlStock.TabIndex = 22;
+            this.btnControlStock.Text = "Control de Stock";
+            this.btnControlStock.UseVisualStyleBackColor = true;
+            this.btnControlStock.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnVerEmp
             // 
@@ -285,25 +284,14 @@
             this.btnVerEmp.UseVisualStyleBackColor = true;
             this.btnVerEmp.Click += new System.EventHandler(this.btnVerEmp_Click);
             // 
-            // btnStock
-            // 
-            this.btnStock.Location = new System.Drawing.Point(603, 253);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(98, 54);
-            this.btnStock.TabIndex = 24;
-            this.btnStock.Text = "Stock";
-            this.btnStock.UseVisualStyleBackColor = true;
-            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
-            // 
             // Acceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(899, 450);
-            this.Controls.Add(this.btnStock);
             this.Controls.Add(this.btnVerEmp);
-            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.btnControlStock);
             this.Controls.Add(this.lblBarra);
             this.Controls.Add(this.lblMesas);
             this.Controls.Add(this.btnBarra20);
@@ -364,8 +352,7 @@
         private System.Windows.Forms.Button btnBarra20;
         private System.Windows.Forms.Label lblMesas;
         private System.Windows.Forms.Label lblBarra;
-        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Button btnControlStock;
         private System.Windows.Forms.Button btnVerEmp;
-        private System.Windows.Forms.Button btnStock;
     }
 }
