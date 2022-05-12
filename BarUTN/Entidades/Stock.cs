@@ -5,8 +5,8 @@ namespace Entidades
     public abstract class Stock
     {
         public string nombre;
-        protected decimal stock;
-        protected decimal precio;
+        public decimal stock;
+        public decimal precio;
         
         public Stock()
         {
