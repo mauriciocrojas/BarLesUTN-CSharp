@@ -23,7 +23,7 @@ namespace Entidades
         }
 
 
-        public void HardcodearBebidas()
+        public static void HardcodearBebidas()
         {
             Bebida bebida1 = new Bebida("Gin tonic", 375, Etipo.Alcoholicas, 20, 500);
             Bebida bebida2 = new Bebida("Seven Up", 500, Etipo.Gasificadas, 30, 300);

@@ -19,6 +19,16 @@ namespace UTNBar
         {
             //this.rdbComida.Checked = true;
 
+            this.txtNombreComida.Enabled = false;
+            this.nudPrecioComida.Enabled = false;
+            this.nudStockComida.Enabled = false;
+            this.cmbSal.Enabled = false;
+            this.txtNombreBebida.Enabled = false;
+            this.nudPrecioBebida.Enabled = false;
+            this.nudPesoBebida.Enabled = false;
+            this.cmbTipoBebida.Enabled = false;
+            this.nudStockBebida.Enabled = false;
+
             this.cmbSal.Items.Add("Sí");
             this.cmbSal.Items.Add("No");
 
@@ -32,8 +42,8 @@ namespace UTNBar
             Bebida bebidas = new Bebida();
             Comida comidas = new Comida();
 
-            bebidas.HardcodearBebidas();
-            comidas.HardcodearComidas();
+            Bebida.HardcodearBebidas();
+            Comida.HardcodearComidas();
 
             this.rchListaStock.Text = bebidas.MostrarStock() + comidas.MostrarStock();
 
@@ -107,7 +117,7 @@ namespace UTNBar
                 Etipo tipo;
                 switch (cmbTipoBebida.Text)
                 {
-                    case "Alhocolicas":
+                    case "Alcoholicas":
                         tipo = Etipo.Alcoholicas;
                         break;
                     case "Gasificadas":

@@ -8,6 +8,6 @@ namespace Entidades
 {
 
         public enum Etipo { Alcoholicas, Gasificadas, Aguas };
+        public enum MetodoDePago { Efectivo, Credito, Debito }
 
-    
 }

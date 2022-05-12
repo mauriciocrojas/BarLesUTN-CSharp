@@ -19,7 +19,7 @@ namespace Entidades
             listaComidas = new List<Comida>();
         }
 
-        public void HardcodearComidas()
+        public static void HardcodearComidas()
         {
             Comida comida1 = new Comida("Verduras al vapor", true, 15, 700);
             Comida comida2 = new Comida("Pastel de choclo", false, 30, 900);

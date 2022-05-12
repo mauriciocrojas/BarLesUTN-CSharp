@@ -63,7 +63,7 @@
             this.btnMesa1.TabIndex = 0;
             this.btnMesa1.Text = "1";
             this.btnMesa1.UseVisualStyleBackColor = true;
-            this.btnMesa1.Click += new System.EventHandler(this.btnMesa1_Click);
+            this.btnMesa1.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa2
             // 
@@ -73,6 +73,7 @@
             this.btnMesa2.TabIndex = 1;
             this.btnMesa2.Text = "2";
             this.btnMesa2.UseVisualStyleBackColor = true;
+            this.btnMesa2.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa3
             // 
@@ -82,6 +83,7 @@
             this.btnMesa3.TabIndex = 2;
             this.btnMesa3.Text = "3";
             this.btnMesa3.UseVisualStyleBackColor = true;
+            this.btnMesa3.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa4
             // 
@@ -91,6 +93,7 @@
             this.btnMesa4.TabIndex = 3;
             this.btnMesa4.Text = "4";
             this.btnMesa4.UseVisualStyleBackColor = true;
+            this.btnMesa4.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa5
             // 
@@ -100,6 +103,7 @@
             this.btnMesa5.TabIndex = 4;
             this.btnMesa5.Text = "5";
             this.btnMesa5.UseVisualStyleBackColor = true;
+            this.btnMesa5.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa6
             // 
@@ -109,6 +113,7 @@
             this.btnMesa6.TabIndex = 5;
             this.btnMesa6.Text = "6";
             this.btnMesa6.UseVisualStyleBackColor = true;
+            this.btnMesa6.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa7
             // 
@@ -118,6 +123,7 @@
             this.btnMesa7.TabIndex = 6;
             this.btnMesa7.Text = "7";
             this.btnMesa7.UseVisualStyleBackColor = true;
+            this.btnMesa7.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa8
             // 
@@ -127,6 +133,7 @@
             this.btnMesa8.TabIndex = 7;
             this.btnMesa8.Text = "8";
             this.btnMesa8.UseVisualStyleBackColor = true;
+            this.btnMesa8.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa10
             // 
@@ -136,6 +143,7 @@
             this.btnMesa10.TabIndex = 8;
             this.btnMesa10.Text = "10";
             this.btnMesa10.UseVisualStyleBackColor = true;
+            this.btnMesa10.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa9
             // 
@@ -145,6 +153,7 @@
             this.btnMesa9.TabIndex = 9;
             this.btnMesa9.Text = "9";
             this.btnMesa9.UseVisualStyleBackColor = true;
+            this.btnMesa9.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa11
             // 
@@ -155,6 +164,7 @@
             this.btnMesa11.TabIndex = 10;
             this.btnMesa11.Text = "11";
             this.btnMesa11.UseVisualStyleBackColor = true;
+            this.btnMesa11.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa12
             // 
@@ -164,6 +174,7 @@
             this.btnMesa12.TabIndex = 11;
             this.btnMesa12.Text = "12";
             this.btnMesa12.UseVisualStyleBackColor = true;
+            this.btnMesa12.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa13
             // 
@@ -173,6 +184,7 @@
             this.btnMesa13.TabIndex = 12;
             this.btnMesa13.Text = "13";
             this.btnMesa13.UseVisualStyleBackColor = true;
+            this.btnMesa13.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa14
             // 
@@ -182,6 +194,7 @@
             this.btnMesa14.TabIndex = 13;
             this.btnMesa14.Text = "14";
             this.btnMesa14.UseVisualStyleBackColor = true;
+            this.btnMesa14.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnMesa15
             // 
@@ -191,6 +204,7 @@
             this.btnMesa15.TabIndex = 14;
             this.btnMesa15.Text = "15";
             this.btnMesa15.UseVisualStyleBackColor = true;
+            this.btnMesa15.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnBarra16
             // 
@@ -200,7 +214,7 @@
             this.btnBarra16.TabIndex = 15;
             this.btnBarra16.Text = "16";
             this.btnBarra16.UseVisualStyleBackColor = true;
-            this.btnBarra16.Click += new System.EventHandler(this.btnBarra16_Click);
+            this.btnBarra16.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnBarra17
             // 
@@ -210,6 +224,7 @@
             this.btnBarra17.TabIndex = 16;
             this.btnBarra17.Text = "17";
             this.btnBarra17.UseVisualStyleBackColor = true;
+            this.btnBarra17.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnBarra18
             // 
@@ -219,6 +234,7 @@
             this.btnBarra18.TabIndex = 17;
             this.btnBarra18.Text = "18";
             this.btnBarra18.UseVisualStyleBackColor = true;
+            this.btnBarra18.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnBarra19
             // 
@@ -228,6 +244,7 @@
             this.btnBarra19.TabIndex = 18;
             this.btnBarra19.Text = "19";
             this.btnBarra19.UseVisualStyleBackColor = true;
+            this.btnBarra19.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // btnBarra20
             // 
@@ -237,6 +254,7 @@
             this.btnBarra20.TabIndex = 19;
             this.btnBarra20.Text = "20";
             this.btnBarra20.UseVisualStyleBackColor = true;
+            this.btnBarra20.Click += new System.EventHandler(this.btnUbicacion);
             // 
             // lblMesas
             // 

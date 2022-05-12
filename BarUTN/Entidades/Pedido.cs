@@ -9,7 +9,7 @@ namespace Entidades
     public class Pedido
     {
         public int numeroUbicacion;
-        public enum MetodoDePago { Efectivo, Credito, Debito}
+
         public MetodoDePago metodoDePago;
 
         public Pedido() { }
