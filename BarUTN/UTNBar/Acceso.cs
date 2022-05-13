@@ -82,19 +82,23 @@ namespace UTNBar
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
 
-            if (tipoUsuario is Administrador)
-            {
-                ControlStock stock = new ControlStock(tipoUsuario);
-                stock.ShowDialog();
+            //if (tipoUsuario is Administrador)
+            //{
+            //    ControlStock stock = new ControlStock(tipoUsuario);
+            //    stock.ShowDialog();
 
 
-            }
-            else
-            {
-                ControlStock stock = new ControlStock(tipoUsuario);
-                stock.ShowDialog();
+            //}
+            //else
+            //{
+            //    ControlStock stock = new ControlStock(tipoUsuario);
+            //    stock.ShowDialog();
 
-            }
+            //}
+
+            ControlStock stock = new ControlStock(tipoUsuario);
+            stock.ShowDialog();
+
         }
 
         private void btnUbicacion(object sender, EventArgs e)
@@ -109,6 +113,21 @@ namespace UTNBar
                     Ubicacion ubicacionForm = new Ubicacion(item.Key);
                     ubicacionForm.ShowDialog();
                 }
+            }
+        }
+
+        private void btnUsuarioLogeado_Click(object sender, EventArgs e)
+        {
+            if (tipoUsuario is Administrador)
+            {
+
+                string cadena = $"Usuario logueado: {Administrador.listaAdministradores[0].user}, {Administrador.listaAdministradores[0].nombre} {Administrador.listaAdministradores[0].apellido}";
+                MessageBox.Show(cadena, "Usuario logueado tipo Administrador");
+            }
+            else
+            {
+                string cadena = $"Usuario logueado: {Empleado.listaEmpleados[0].user}, {Empleado.listaEmpleados[0].nombre} {Empleado.listaEmpleados[0].apellido}";
+                MessageBox.Show(cadena, "Usuario logueado tipo Empleado");
             }
         }
     }

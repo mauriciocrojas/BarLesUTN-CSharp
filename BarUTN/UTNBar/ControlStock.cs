@@ -114,17 +114,17 @@ namespace UTNBar
             }
             else if (this.rdbBebida.Checked)
             {
-                Etipo tipo;
+                ETipoBebida tipo;
                 switch (cmbTipoBebida.Text)
                 {
                     case "Alcoholicas":
-                        tipo = Etipo.Alcoholicas;
+                        tipo = ETipoBebida.Alcoholicas;
                         break;
                     case "Gasificadas":
-                        tipo = Etipo.Gasificadas;
+                        tipo = ETipoBebida.Gasificadas;
                         break;
                     default:
-                        tipo = Etipo.Aguas;
+                        tipo = ETipoBebida.Aguas;
                         break;
 
                 }

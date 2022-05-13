@@ -8,14 +8,14 @@ namespace Entidades
         public static List<Bebida> listaBebidas;
 
         protected decimal peso;
-        protected Etipo tipo;
+        protected ETipoBebida tipo;
 
         public Bebida()
         {
             listaBebidas = new List<Bebida>();
 
         }
-        public Bebida(string nombre, decimal peso, Etipo tipo, decimal stock, decimal precio) : base(nombre, stock, precio)
+        public Bebida(string nombre, decimal peso, ETipoBebida tipo, decimal stock, decimal precio) : base(nombre, stock, precio)
         {
             this.peso = peso;
             this.tipo = tipo;
@@ -25,9 +25,9 @@ namespace Entidades
 
         public static void HardcodearBebidas()
         {
-            Bebida bebida1 = new Bebida("Gin tonic", 375, Etipo.Alcoholicas, 20, 500);
-            Bebida bebida2 = new Bebida("Seven Up", 500, Etipo.Gasificadas, 30, 300);
-            Bebida bebida3 = new Bebida("Agua sin gas", 400, Etipo.Aguas, 40, 250);
+            Bebida bebida1 = new Bebida("Gin tonic", 375, ETipoBebida.Alcoholicas, 20, 500);
+            Bebida bebida2 = new Bebida("Seven Up", 500, ETipoBebida.Gasificadas, 30, 300);
+            Bebida bebida3 = new Bebida("Agua sin gas", 400, ETipoBebida.Aguas, 40, 250);
 
             listaBebidas.Add(bebida1);
             listaBebidas.Add(bebida2);
@@ -46,7 +46,7 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public static void AgregarNuevaBebida(string nombre, decimal peso, Etipo tipo, decimal stock, decimal precio)
+        public static void AgregarNuevaBebida(string nombre, decimal peso, ETipoBebida tipo, decimal stock, decimal precio)
         {
             Bebida bebida = new Bebida(nombre, peso, tipo, stock, precio);
             listaBebidas.Add(bebida);

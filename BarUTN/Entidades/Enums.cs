@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
 
-        public enum Etipo { Alcoholicas, Gasificadas, Aguas };
+        public enum ETipoBebida { Alcoholicas, Gasificadas, Aguas };
         public enum MetodoDePago { Efectivo, Credito, Debito }
 
 }

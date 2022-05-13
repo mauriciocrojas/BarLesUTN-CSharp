@@ -53,6 +53,7 @@
             this.lblBarra = new System.Windows.Forms.Label();
             this.btnControlStock = new System.Windows.Forms.Button();
             this.btnVerEmp = new System.Windows.Forms.Button();
+            this.btnUsuarioLogeado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMesa1
@@ -302,12 +303,23 @@
             this.btnVerEmp.UseVisualStyleBackColor = true;
             this.btnVerEmp.Click += new System.EventHandler(this.btnVerEmp_Click);
             // 
+            // btnUsuarioLogeado
+            // 
+            this.btnUsuarioLogeado.Location = new System.Drawing.Point(609, 239);
+            this.btnUsuarioLogeado.Name = "btnUsuarioLogeado";
+            this.btnUsuarioLogeado.Size = new System.Drawing.Size(92, 60);
+            this.btnUsuarioLogeado.TabIndex = 24;
+            this.btnUsuarioLogeado.Text = "Mostrar usuario logueado";
+            this.btnUsuarioLogeado.UseVisualStyleBackColor = true;
+            this.btnUsuarioLogeado.Click += new System.EventHandler(this.btnUsuarioLogeado_Click);
+            // 
             // Acceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(899, 450);
+            this.Controls.Add(this.btnUsuarioLogeado);
             this.Controls.Add(this.btnVerEmp);
             this.Controls.Add(this.btnControlStock);
             this.Controls.Add(this.lblBarra);
@@ -372,5 +384,6 @@
         private System.Windows.Forms.Label lblBarra;
         private System.Windows.Forms.Button btnControlStock;
         private System.Windows.Forms.Button btnVerEmp;
+        private System.Windows.Forms.Button btnUsuarioLogeado;
     }
 }

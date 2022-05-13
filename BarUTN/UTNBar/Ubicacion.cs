@@ -102,85 +102,85 @@ namespace UTNBar
                     break;
             }
 
-            foreach (Comida comida in Comida.listaComidas)
-            {
-                if (cmbComidas.Text == comida.nombre)
-                {
-                    nombreComida = comida.nombre;
-                    stockNuevoComida = comida.stock - nudComidas.Value;
-                    precioTotalComida = comida.precio * nudComidas.Value;
-                }
-                else
-                {
-                    nombreComida = "Inexistente";
-                    stockNuevoComida = 0;
-                    precioTotalComida = 0;
-                }
-            }
-
-            foreach (Bebida bebida in Bebida.listaBebidas)
-            {
-                if (cmbBebidas.Text == bebida.nombre)
-                {
-                    nombreBebida = bebida.nombre;
-                    stockNuevoBebida = bebida.stock - nudBebidas.Value;
-                    precioTotalBebida = bebida.precio * nudBebidas.Value;
-                }
-                else
-                {
-                    nombreBebida = "Inexistente";
-                    stockNuevoBebida = 0;
-                    precioTotalBebida = 0;
-                }
-            }
-
-            //switch (cmbComidas.Text)
+            //foreach (Comida comida in Comida.listaComidas)
             //{
-            //    case "Verduras al vapor":
-            //        nombreComida = "Verduras al vapor";
-            //        stockNuevoComida = Comida.listaComidas[0].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[0].precio * nudComidas.Value;
-            //        break;
-            //    case "Pastel de choclo":
-            //        nombreComida = "Pastel de choclo";
-            //        stockNuevoComida = Comida.listaComidas[1].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[1].precio * nudComidas.Value;
-            //        break;
-            //    case "Merluza con puré":
-            //        nombreComida = "Merluza con puré";
-            //        stockNuevoComida = Comida.listaComidas[2].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[2].precio * nudComidas.Value;
-            //        break;
-            //    default:
+            //    if (cmbComidas.Text == comida.nombre)
+            //    {
+            //        nombreComida = comida.nombre;
+            //        stockNuevoComida = comida.stock - nudComidas.Value;
+            //        precioTotalComida = comida.precio * nudComidas.Value;
+            //    }
+            //    else
+            //    {
             //        nombreComida = "Inexistente";
             //        stockNuevoComida = 0;
             //        precioTotalComida = 0;
-            //        break;
+            //    }
             //}
 
-            //switch (cmbBebidas.Text)
+            //foreach (Bebida bebida in Bebida.listaBebidas)
             //{
-            //    case "Gin tonic":
-            //        nombreBebida = "Gin tonic";
-            //        stockNuevoBebida = Bebida.listaBebidas[0].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[0].precio * nudBebidas.Value;
-            //        break;
-            //    case "Seven Up":
-            //        nombreBebida = "Seven Up";
-            //        stockNuevoBebida = Bebida.listaBebidas[1].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[1].precio * nudBebidas.Value;
-            //        break;
-            //    case "Agua sin gas":
-            //        nombreBebida = "Agua sin gas";
-            //        stockNuevoBebida = Bebida.listaBebidas[2].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[2].precio * nudBebidas.Value;
-            //        break;
-            //    default:
+            //    if (cmbBebidas.Text == bebida.nombre)
+            //    {
+            //        nombreBebida = bebida.nombre;
+            //        stockNuevoBebida = bebida.stock - nudBebidas.Value;
+            //        precioTotalBebida = bebida.precio * nudBebidas.Value;
+            //    }
+            //    else
+            //    {
             //        nombreBebida = "Inexistente";
             //        stockNuevoBebida = 0;
             //        precioTotalBebida = 0;
-            //        break;
+            //    }
             //}
+
+            switch (cmbComidas.Text)
+            {
+                case "Verduras al vapor":
+                    nombreComida = "Verduras al vapor";
+                    stockNuevoComida = Comida.listaComidas[0].stock - nudComidas.Value;
+                    precioTotalComida = Comida.listaComidas[0].precio * nudComidas.Value;
+                    break;
+                case "Pastel de choclo":
+                    nombreComida = "Pastel de choclo";
+                    stockNuevoComida = Comida.listaComidas[1].stock - nudComidas.Value;
+                    precioTotalComida = Comida.listaComidas[1].precio * nudComidas.Value;
+                    break;
+                case "Merluza con puré":
+                    nombreComida = "Merluza con puré";
+                    stockNuevoComida = Comida.listaComidas[2].stock - nudComidas.Value;
+                    precioTotalComida = Comida.listaComidas[2].precio * nudComidas.Value;
+                    break;
+                default:
+                    nombreComida = "Inexistente";
+                    stockNuevoComida = 0;
+                    precioTotalComida = 0;
+                    break;
+            }
+
+            switch (cmbBebidas.Text)
+            {
+                case "Gin tonic":
+                    nombreBebida = "Gin tonic";
+                    stockNuevoBebida = Bebida.listaBebidas[0].stock - nudBebidas.Value;
+                    precioTotalBebida = Bebida.listaBebidas[0].precio * nudBebidas.Value;
+                    break;
+                case "Seven Up":
+                    nombreBebida = "Seven Up";
+                    stockNuevoBebida = Bebida.listaBebidas[1].stock - nudBebidas.Value;
+                    precioTotalBebida = Bebida.listaBebidas[1].precio * nudBebidas.Value;
+                    break;
+                case "Agua sin gas":
+                    nombreBebida = "Agua sin gas";
+                    stockNuevoBebida = Bebida.listaBebidas[2].stock - nudBebidas.Value;
+                    precioTotalBebida = Bebida.listaBebidas[2].precio * nudBebidas.Value;
+                    break;
+                default:
+                    nombreBebida = "Inexistente";
+                    stockNuevoBebida = 0;
+                    precioTotalBebida = 0;
+                    break;
+            }
 
             if (tipoUbicacion is Mesa)
             {
