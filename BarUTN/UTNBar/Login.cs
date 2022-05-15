@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System;
 using System.Windows.Forms;
+using System.Media;
 
 namespace UTNBar
 {
@@ -17,7 +18,7 @@ namespace UTNBar
         private void Login_Load(object sender, EventArgs e)
         {
             Empleado.HardcodearEmpleados();
-            Administrador.HardcodearAdministradores();
+            Administrador.HardcodearAdministradores();            
 
         }
 
@@ -85,5 +86,38 @@ namespace UTNBar
             }
             return false;
         }
+
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Media.SystemSounds.Exclamation.Play();
+            
+            if (MessageBox.Show("¿Esta seguro que desea salir?", "Salida", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
+            //DialogResult resultado = MessageBox.Show("¿Esta seguro que desea salir?", "Salida", MessageBoxButtons.YesNo);
+
+
+            //if (resultado == DialogResult.No)
+            //{
+            //    e.Cancel = true;
+            //}
+            //else
+            //{
+            //    SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bloop.wav");
+            //    player.Play();
+
+            //}
+
+        }
+
     }
 }

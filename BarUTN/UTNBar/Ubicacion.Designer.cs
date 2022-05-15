@@ -41,6 +41,8 @@
             this.cmbMetodoDePago = new System.Windows.Forms.ComboBox();
             this.lblMetodoDePago = new System.Windows.Forms.Label();
             this.chkEstacionamiento = new System.Windows.Forms.CheckBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudComidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBebidas)).BeginInit();
             this.SuspendLayout();
@@ -153,12 +155,40 @@
             this.chkEstacionamiento.Text = "¿Usa estacionamiento?";
             this.chkEstacionamiento.UseVisualStyleBackColor = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVolver.Location = new System.Drawing.Point(194, 263);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(85, 46);
+            this.btnVolver.TabIndex = 28;
+            this.btnVolver.Text = "Volver Atrás";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(285, 263);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(85, 46);
+            this.btnSalir.TabIndex = 27;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Ubicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(353, 281);
+            this.ClientSize = new System.Drawing.Size(382, 321);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.chkEstacionamiento);
             this.Controls.Add(this.lblMetodoDePago);
             this.Controls.Add(this.cmbMetodoDePago);
@@ -200,5 +230,7 @@
         private System.Windows.Forms.ComboBox cmbMetodoDePago;
         private System.Windows.Forms.Label lblMetodoDePago;
         private System.Windows.Forms.CheckBox chkEstacionamiento;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

@@ -31,10 +31,12 @@ namespace UTNBar
 
             this.cmbSal.Items.Add("Sí");
             this.cmbSal.Items.Add("No");
+            this.cmbSal.SelectedIndex = 1;
 
             this.cmbTipoBebida.Items.Add("Alcoholicas");
             this.cmbTipoBebida.Items.Add("Gasificadas");
             this.cmbTipoBebida.Items.Add("Aguas");
+            this.cmbTipoBebida.SelectedIndex = 2;
 
             //this.cmbTipoBebida.DataSource = Enum.GetValues(typeof(Etipo));
 
@@ -138,5 +140,16 @@ namespace UTNBar
 
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

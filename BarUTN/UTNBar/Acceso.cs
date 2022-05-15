@@ -1,8 +1,8 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace UTNBar
 {
@@ -135,6 +135,18 @@ namespace UTNBar
                 string cadena = $"Usuario logueado: {Empleado.listaEmpleados[0].user}, {Empleado.listaEmpleados[0].nombre} {Empleado.listaEmpleados[0].apellido}";
                 MessageBox.Show(cadena, "Usuario logueado tipo Empleado");
             }
+        }
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
         }
     }
 }

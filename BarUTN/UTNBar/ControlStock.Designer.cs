@@ -51,6 +51,8 @@
             this.rdbBebida = new System.Windows.Forms.RadioButton();
             this.rdbComida = new System.Windows.Forms.RadioButton();
             this.lblStock = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioComida)).BeginInit();
             this.grpAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockBebida)).BeginInit();
@@ -269,12 +271,40 @@
             this.lblStock.TabIndex = 8;
             this.lblStock.Text = "Stock";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVolver.Location = new System.Drawing.Point(319, 366);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(85, 46);
+            this.btnVolver.TabIndex = 30;
+            this.btnVolver.Text = "Volver Atrás";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(410, 366);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(85, 46);
+            this.btnSalir.TabIndex = 29;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // ControlStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(505, 355);
+            this.ClientSize = new System.Drawing.Size(505, 433);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.grpAdmin);
             this.Controls.Add(this.rchListaStock);
@@ -321,5 +351,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.ComboBox cmbTipoBebida;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

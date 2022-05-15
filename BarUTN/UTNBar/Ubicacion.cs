@@ -88,7 +88,7 @@ namespace UTNBar
 
         private void btnHacerPedido_Click(object sender, EventArgs e)
         {
-            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\moneda.wav");
+            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bloop.wav");
             player.Play();
             HacerPedido();
         }
@@ -254,6 +254,16 @@ namespace UTNBar
 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

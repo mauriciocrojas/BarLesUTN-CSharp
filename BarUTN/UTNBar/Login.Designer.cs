@@ -39,6 +39,7 @@
             this.btnCargarAdmin = new System.Windows.Forms.Button();
             this.btnCargarEmp = new System.Windows.Forms.Button();
             this.lblBar = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLesUTN
@@ -137,12 +138,26 @@
             this.lblBar.TabIndex = 9;
             this.lblBar.Text = "Bar";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(16, 333);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(89, 38);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(459, 383);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblBar);
             this.Controls.Add(this.btnCargarEmp);
             this.Controls.Add(this.btnCargarAdmin);
@@ -160,6 +175,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -178,5 +194,6 @@
         private System.Windows.Forms.Button btnCargarAdmin;
         private System.Windows.Forms.Button btnCargarEmp;
         private System.Windows.Forms.Label lblBar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
