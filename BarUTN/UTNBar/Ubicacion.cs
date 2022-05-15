@@ -1,21 +1,33 @@
 ﻿using Entidades;
 using System;
 using System.Windows.Forms;
+using System.Media;
 
 namespace UTNBar
 {
     public partial class Ubicacion : Form
     {
+        Usuario tipoUsuario;
         Pedido tipoUbicacion;
         public int numeroUbicacion;
-        public Ubicacion(int ubicacion)
+        public Ubicacion(int ubicacion, Usuario tipoUsuario)
         {
             InitializeComponent();
             this.numeroUbicacion = SiEsMesaOBarra(ubicacion);
+            this.tipoUsuario = tipoUsuario;
         }
 
         private void Ubicacion_Load(object sender, EventArgs e)
         {
+
+            if (tipoUsuario is Administrador)
+            {
+                this.BackColor = System.Drawing.Color.AliceBlue;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.MistyRose;
+            }
             //this.cmbComidas.Items.Add("Verduras al vapor");
             //this.cmbComidas.Items.Add("Pastel de choclo");
             //this.cmbComidas.Items.Add("Merluza con puré");
@@ -76,6 +88,8 @@ namespace UTNBar
 
         private void btnHacerPedido_Click(object sender, EventArgs e)
         {
+            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\moneda.wav");
+            player.Play();
             HacerPedido();
         }
 

@@ -51,12 +51,14 @@ namespace UTNBar
             {
                 this.grpAdmin.Enabled = true;
                 this.Text = "Menú de Administrador - Stock y agregado";
+                this.BackColor = System.Drawing.Color.AliceBlue;
 
             }
             else
             {
                 this.grpAdmin.Enabled = false;
                 this.Text = "Menú de Empleado - Stock";
+                this.BackColor = System.Drawing.Color.MistyRose;
 
             }
 

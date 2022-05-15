@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Media;
 
 namespace UTNBar
 {
@@ -23,10 +24,12 @@ namespace UTNBar
             if (tipoUsuario is Administrador)
             {
                 this.btnVerEmp.Enabled = true;
+                this.BackColor = System.Drawing.Color.AliceBlue;
             }
             else
             {
                 this.btnVerEmp.Enabled = false;
+                this.BackColor = System.Drawing.Color.MistyRose;
             }
 
             botones.Add(1, this.btnMesa1);
@@ -74,7 +77,7 @@ namespace UTNBar
         {
             Usuario empleado = new Empleado();
             Empleado.HardcodearEmpleados();
-            MessageBox.Show(empleado.MostrarDatos());
+            MessageBox.Show(empleado.MostrarDatos(), "Empleados Les UTN Bar");
 
         }
 
@@ -103,6 +106,9 @@ namespace UTNBar
 
         private void btnUbicacion(object sender, EventArgs e)
         {
+            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bipmesa.wav");
+            player.Play();
+
 
             Button boton = (Button)sender;
 
@@ -110,7 +116,7 @@ namespace UTNBar
             {
                 if (item.Value == boton)
                 {
-                    Ubicacion ubicacionForm = new Ubicacion(item.Key);
+                    Ubicacion ubicacionForm = new Ubicacion(item.Key, tipoUsuario);
                     ubicacionForm.ShowDialog();
                 }
             }

@@ -25,7 +25,7 @@ namespace UTNBar
         {
             if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
             {
-
+                System.Media.SystemSounds.Hand.Play();
                 if (btnSeCargoEmp)
                 {
                     Usuario usuario = CargarEmpleado();
@@ -41,7 +41,8 @@ namespace UTNBar
             }
             else
             {
-                MessageBox.Show("Usuario incorrecto");
+                System.Media.SystemSounds.Exclamation.Play();
+                MessageBox.Show("Usuario incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

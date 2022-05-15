@@ -40,6 +40,7 @@
             this.btnHacerPedido = new System.Windows.Forms.Button();
             this.cmbMetodoDePago = new System.Windows.Forms.ComboBox();
             this.lblMetodoDePago = new System.Windows.Forms.Label();
+            this.chkEstacionamiento = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudComidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBebidas)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             // btnHacerPedido
             // 
-            this.btnHacerPedido.Location = new System.Drawing.Point(189, 150);
+            this.btnHacerPedido.Location = new System.Drawing.Point(189, 162);
             this.btnHacerPedido.Name = "btnHacerPedido";
             this.btnHacerPedido.Size = new System.Drawing.Size(104, 57);
             this.btnHacerPedido.TabIndex = 6;
@@ -128,7 +129,7 @@
             // 
             this.cmbMetodoDePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMetodoDePago.FormattingEnabled = true;
-            this.cmbMetodoDePago.Location = new System.Drawing.Point(29, 168);
+            this.cmbMetodoDePago.Location = new System.Drawing.Point(29, 196);
             this.cmbMetodoDePago.Name = "cmbMetodoDePago";
             this.cmbMetodoDePago.Size = new System.Drawing.Size(107, 23);
             this.cmbMetodoDePago.TabIndex = 9;
@@ -136,11 +137,21 @@
             // lblMetodoDePago
             // 
             this.lblMetodoDePago.AutoSize = true;
-            this.lblMetodoDePago.Location = new System.Drawing.Point(29, 150);
+            this.lblMetodoDePago.Location = new System.Drawing.Point(29, 178);
             this.lblMetodoDePago.Name = "lblMetodoDePago";
             this.lblMetodoDePago.Size = new System.Drawing.Size(95, 15);
             this.lblMetodoDePago.TabIndex = 10;
             this.lblMetodoDePago.Text = "Método de pago";
+            // 
+            // chkEstacionamiento
+            // 
+            this.chkEstacionamiento.AutoSize = true;
+            this.chkEstacionamiento.Location = new System.Drawing.Point(29, 128);
+            this.chkEstacionamiento.Name = "chkEstacionamiento";
+            this.chkEstacionamiento.Size = new System.Drawing.Size(146, 19);
+            this.chkEstacionamiento.TabIndex = 11;
+            this.chkEstacionamiento.Text = "¿Usa estacionamiento?";
+            this.chkEstacionamiento.UseVisualStyleBackColor = true;
             // 
             // Ubicacion
             // 
@@ -148,6 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(353, 281);
+            this.Controls.Add(this.chkEstacionamiento);
             this.Controls.Add(this.lblMetodoDePago);
             this.Controls.Add(this.cmbMetodoDePago);
             this.Controls.Add(this.btnHacerPedido);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.Button btnHacerPedido;
         private System.Windows.Forms.ComboBox cmbMetodoDePago;
         private System.Windows.Forms.Label lblMetodoDePago;
+        private System.Windows.Forms.CheckBox chkEstacionamiento;
     }
 }
