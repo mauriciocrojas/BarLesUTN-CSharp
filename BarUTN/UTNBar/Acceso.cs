@@ -18,7 +18,7 @@ namespace UTNBar
         /// <summary>
         /// Constructor que recibe un usuario para luego trabajar con él y otros atributos.
         /// </summary>
-        /// <param name="usuario"></param>
+        /// <param name="usuario">Usuario que definirá cómo se mostrarará el formulario de acceso</param>
         public Acceso(Usuario usuario)
         {
             InitializeComponent();
@@ -176,7 +176,7 @@ namespace UTNBar
         /// </summary>
         private void btnUbicacion(object sender, EventArgs e)
         {
-            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bipmesa.wav");
+            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLBP\Sonidos\bipmesa.wav");
             player.Play();
 
             Button boton = (Button)sender;

@@ -10,6 +10,12 @@ namespace UTNBar
         Usuario tipoUsuario;
         Pedido tipoUbicacion;
         public int numeroUbicacion;
+
+        /// <summary>
+        /// Constructor que recibe una ubicacion y un tipo de usuario.
+        /// </summary>
+        /// <param name="ubicacion">Parámaetro que determinará la ubicación en el bar</param>
+        /// <param name="tipoUsuario">Usuario que definirá cómo se mostrarará el formulario de ubicación</param>
         public Ubicacion(int ubicacion, Usuario tipoUsuario)
         {
             InitializeComponent();
@@ -93,14 +99,20 @@ namespace UTNBar
             }
         }
 
+        /// <summary>
+        /// Botón que hará un pedido.
+        /// </summary>
         private void btnHacerPedido_Click(object sender, EventArgs e)
         {
-            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bloop.wav");
+            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLBP\Sonidos\bloop.wav");
             player.Play();
             HacerPedido();
             
         }
 
+        /// <summary>
+        /// Función que hará el pedido y lo agregará al RichBox.
+        /// </summary>
         public void HacerPedido()
         {
             MetodoDePago metodo;
@@ -219,6 +231,10 @@ namespace UTNBar
             }
         }
 
+        /// <summary>
+        /// Función que define si se marca el check de bebida o comida
+        /// para así poder hacer el pedido correspondiente.
+        /// </summary>
         public void SiQuiereComidaOBebida()
         {
 
@@ -255,19 +271,29 @@ namespace UTNBar
             }
         }
 
-
+        /// <summary>
+        /// Funcionalidad que se aplica cada vez que se presiona un check
+        /// llamará a la función SiQuiereComidaOBebida y actualizará las secciones.
+        /// </summary>
         private void chkComidaBebida_CheckedChanged(object sender, EventArgs e)
         {
             SiQuiereComidaOBebida();
 
         }
 
+
+        /// <summary>
+        /// Botón que cerrará toda la aplicación.
+        /// </summary>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
         }
 
+        /// <summary>
+        /// Botón que irá un pasó atrás en la aplicación.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();

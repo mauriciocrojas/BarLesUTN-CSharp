@@ -1,7 +1,6 @@
 ﻿using Entidades;
 using System;
 using System.Windows.Forms;
-using System.Media;
 
 namespace UTNBar
 {
@@ -18,8 +17,8 @@ namespace UTNBar
         private void Login_Load(object sender, EventArgs e)
         {
             Empleado.HardcodearEmpleados();
-            Administrador.HardcodearAdministradores();        
-            
+            Administrador.HardcodearAdministradores();
+
 
         }
 
@@ -48,7 +47,10 @@ namespace UTNBar
             }
         }
 
-
+        /// <summary>
+        /// Función que cargara un empleado.
+        /// </summary>
+        /// <returns>Retorna un usuario tipo empleado</returns>
         public Usuario CargarEmpleado()
         {
             this.txtUsuario.Text = Empleado.listaEmpleados[0].user;
@@ -57,6 +59,10 @@ namespace UTNBar
             return usuario;
         }
 
+        /// <summary>
+        /// Función que cargara un administrador.
+        /// </summary>
+        /// <returns>Retorna un usuario tipo administrador</returns>
         public Usuario CargarAdministrador()
         {
             this.txtUsuario.Text = Administrador.listaAdministradores[0].user;
@@ -65,6 +71,9 @@ namespace UTNBar
             return usuario;
         }
 
+        /// <summary>
+        /// Botón que cargará los datos del empleado en los textbox correspondientes.
+        /// </summary>
         private void btnCargarEmp_Click(object sender, EventArgs e)
         {
             CargarEmpleado();
@@ -72,6 +81,9 @@ namespace UTNBar
             btnSeCargoAdm = false;
         }
 
+        /// <summary>
+        /// Botón que cargará los datos del administrador en los textbox correspondientes.
+        /// </summary>
         private void btnCargarAdmin_Click(object sender, EventArgs e)
         {
             CargarAdministrador();
@@ -79,6 +91,12 @@ namespace UTNBar
             btnSeCargoEmp = false;
         }
 
+        /// <summary>
+        /// Función que chequea si los usuarios ingresados son correctos
+        /// </summary>
+        /// <param name="usuario">Usuario que se pasará para chequear</param>
+        /// <param name="password">Password que se pasará para chequear</param>
+        /// <returns>Retorna true en caso correcto, sino false</returns>
         public bool CheckearUsuario(string usuario, string password)
         {
             if ((usuario == "aperez" && password == "arielsito") || (usuario == "lmessi" && password == "copaamerica"))
@@ -88,37 +106,25 @@ namespace UTNBar
             return false;
         }
 
-
-
+        /// <summary>
+        /// Botón que cerrará toda la aplicación.
+        /// </summary>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Cuando se intente cerrar la app por completo, si se preguntará si está seguro.
+        /// </summary>
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Media.SystemSounds.Exclamation.Play();
-            
+
             if (MessageBox.Show("¿Esta seguro que desea salir?", "Salida", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 e.Cancel = true;
             }
-
-            //DialogResult resultado = MessageBox.Show("¿Esta seguro que desea salir?", "Salida", MessageBoxButtons.YesNo);
-
-
-            //if (resultado == DialogResult.No)
-            //{
-            //    e.Cancel = true;
-            //}
-            //else
-            //{
-            //    SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bloop.wav");
-            //    player.Play();
-
-            //}
-
         }
-
     }
 }

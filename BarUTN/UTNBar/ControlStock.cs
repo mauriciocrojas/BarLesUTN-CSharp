@@ -8,7 +8,10 @@ namespace UTNBar
     {
         Usuario tipoUsuario;
 
-
+        /// <summary>
+        /// Constructor que recibe un tipo de usuario para así mostrar y acceder a diferentes funcionalidades.
+        /// </summary>
+        /// <param name="tipoUsuario">Tipo de usuario que determinará diferentes funcionalidades</param>
         public ControlStock(Usuario tipoUsuario)
         {
             InitializeComponent();
@@ -40,7 +43,6 @@ namespace UTNBar
 
             //this.cmbTipoBebida.DataSource = Enum.GetValues(typeof(Etipo));
 
-
             Bebida bebidas = new Bebida();
             Comida comidas = new Comida();
 
@@ -54,18 +56,19 @@ namespace UTNBar
                 this.grpAdmin.Enabled = true;
                 this.Text = "Menú de Administrador - Stock y agregado";
                 this.BackColor = System.Drawing.Color.AliceBlue;
-
             }
             else
             {
                 this.grpAdmin.Enabled = false;
                 this.Text = "Menú de Empleado - Stock";
                 this.BackColor = System.Drawing.Color.MistyRose;
-
             }
-
         }
 
+        /// <summary>
+        /// Si clickeamos en el radiobutton Comida, se habilitará para poder agregar una nueva. 
+        /// Y se deshabilitará el poder agregar una bebida mientras esté con el check comida.
+        /// </summary>
         private void rdbComida_Click(object sender, EventArgs e)
         {
             this.txtNombreComida.Enabled = true;
@@ -81,6 +84,10 @@ namespace UTNBar
             this.rdbBebida.Checked = false;
         }
 
+        /// <summary>
+        /// Si clickeamos en el radiobutton Bebida, se habilitará para poder agregar una nueva. 
+        /// Y se deshabilitará el poder agregar una comida mientras esté con el check bebida.
+        /// </summary>
         private void rdbBebida_CheckedChanged(object sender, EventArgs e)
         {
             this.txtNombreComida.Enabled = false;
@@ -94,9 +101,11 @@ namespace UTNBar
             this.nudStockBebida.Enabled = true;
 
             this.rdbComida.Checked = false;
-
         }
 
+        /// <summary>
+        /// Botón que agregará un nuevo producto.
+        /// </summary>
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             AgregarNuevoProducto();
@@ -105,6 +114,9 @@ namespace UTNBar
 
         }
 
+        /// <summary>
+        /// Función que agregará un nuevo producto.
+        /// </summary>
         public void AgregarNuevoProducto()
         {
             Comida comida = new Comida();
@@ -130,31 +142,33 @@ namespace UTNBar
                     default:
                         tipo = ETipoBebida.Aguas;
                         break;
-
                 }
                 Bebida.AgregarNuevaBebida(this.txtNombreBebida.Text, this.nudPesoBebida.Value, tipo, this.nudStockBebida.Value, this.nudPrecioBebida.Value);
                 this.rchListaStock.Text += bebida.MostrarStock() + comida.MostrarStock();
-
             }
-
-
         }
 
+        /// <summary>
+        /// Botón que irá un pasó atrás en la aplicación.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-
         }
 
+        /// <summary>
+        /// Botón que cerrará toda la aplicación.
+        /// </summary>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
+        /// <summary>
+        /// Botón que llamaría el stock para verlo
+        /// </summary>
         private void btnVerStock_Click(object sender, EventArgs e)
         {
-
             Bebida bebidas = new Bebida();
             Comida comidas = new Comida();
             this.rchListaStock.Text += bebidas.MostrarStock() + comidas.MostrarStock();
