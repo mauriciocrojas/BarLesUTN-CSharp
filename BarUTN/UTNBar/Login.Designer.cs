@@ -35,7 +35,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnOlvideClave = new System.Windows.Forms.Button();
             this.btnCargarAdmin = new System.Windows.Forms.Button();
             this.btnCargarEmp = new System.Windows.Forms.Button();
             this.lblBar = new System.Windows.Forms.Label();
@@ -89,22 +88,14 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(136, 279);
+            this.btnIngresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresar.Location = new System.Drawing.Point(180, 277);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(92, 42);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // btnOlvideClave
-            // 
-            this.btnOlvideClave.Location = new System.Drawing.Point(234, 279);
-            this.btnOlvideClave.Name = "btnOlvideClave";
-            this.btnOlvideClave.Size = new System.Drawing.Size(84, 42);
-            this.btnOlvideClave.TabIndex = 6;
-            this.btnOlvideClave.Text = "Olvidé contraseña";
-            this.btnOlvideClave.UseVisualStyleBackColor = true;
             // 
             // btnCargarAdmin
             // 
@@ -161,7 +152,6 @@
             this.Controls.Add(this.lblBar);
             this.Controls.Add(this.btnCargarEmp);
             this.Controls.Add(this.btnCargarAdmin);
-            this.Controls.Add(this.btnOlvideClave);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
@@ -190,7 +180,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button btnOlvideClave;
         private System.Windows.Forms.Button btnCargarAdmin;
         private System.Windows.Forms.Button btnCargarEmp;
         private System.Windows.Forms.Label lblBar;
