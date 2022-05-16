@@ -56,6 +56,12 @@
             this.btnUsuarioLogeado = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.BeigeOcupado = new System.Windows.Forms.PictureBox();
+            this.CoralLibre = new System.Windows.Forms.PictureBox();
+            this.lblOcupado = new System.Windows.Forms.Label();
+            this.lblLibre = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.BeigeOcupado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoralLibre)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMesa1
@@ -341,12 +347,57 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // BeigeOcupado
+            // 
+            this.BeigeOcupado.BackColor = System.Drawing.Color.Beige;
+            this.BeigeOcupado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BeigeOcupado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BeigeOcupado.Location = new System.Drawing.Point(785, 12);
+            this.BeigeOcupado.Name = "BeigeOcupado";
+            this.BeigeOcupado.Size = new System.Drawing.Size(35, 24);
+            this.BeigeOcupado.TabIndex = 27;
+            this.BeigeOcupado.TabStop = false;
+            // 
+            // CoralLibre
+            // 
+            this.CoralLibre.BackColor = System.Drawing.Color.Peru;
+            this.CoralLibre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CoralLibre.Location = new System.Drawing.Point(785, 45);
+            this.CoralLibre.Name = "CoralLibre";
+            this.CoralLibre.Size = new System.Drawing.Size(35, 24);
+            this.CoralLibre.TabIndex = 28;
+            this.CoralLibre.TabStop = false;
+            // 
+            // lblOcupado
+            // 
+            this.lblOcupado.AutoSize = true;
+            this.lblOcupado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOcupado.Location = new System.Drawing.Point(826, 12);
+            this.lblOcupado.Name = "lblOcupado";
+            this.lblOcupado.Size = new System.Drawing.Size(63, 17);
+            this.lblOcupado.TabIndex = 29;
+            this.lblOcupado.Text = "Ocupado";
+            // 
+            // lblLibre
+            // 
+            this.lblLibre.AutoSize = true;
+            this.lblLibre.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLibre.Location = new System.Drawing.Point(826, 45);
+            this.lblLibre.Name = "lblLibre";
+            this.lblLibre.Size = new System.Drawing.Size(37, 17);
+            this.lblLibre.TabIndex = 30;
+            this.lblLibre.Text = "Libre";
+            // 
             // Acceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(899, 450);
+            this.Controls.Add(this.lblLibre);
+            this.Controls.Add(this.lblOcupado);
+            this.Controls.Add(this.CoralLibre);
+            this.Controls.Add(this.BeigeOcupado);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnUsuarioLogeado);
@@ -383,6 +434,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Acceso_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BeigeOcupado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoralLibre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,5 +470,9 @@
         private System.Windows.Forms.Button btnUsuarioLogeado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.PictureBox BeigeOcupado;
+        private System.Windows.Forms.PictureBox CoralLibre;
+        private System.Windows.Forms.Label lblOcupado;
+        private System.Windows.Forms.Label lblLibre;
     }
 }

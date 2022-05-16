@@ -91,6 +91,7 @@ namespace UTNBar
             SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bloop.wav");
             player.Play();
             HacerPedido();
+            
         }
 
         public void HacerPedido()
@@ -198,14 +199,14 @@ namespace UTNBar
 
             if (tipoUbicacion is Mesa)
             {
-                Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida);
+                Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente (1, "A determinar"));
 
                 MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock: {stockNuevoComida}, pedido: {nombreComida}");
 
             }
             else if (tipoUbicacion is Barra)
             {
-                Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida);
+                Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
                 MessageBox.Show($"Barra {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock: {stockNuevoBebida}, pedido: {nombreBebida}");
 
             }

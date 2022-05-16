@@ -151,5 +151,13 @@ namespace UTNBar
             Application.Exit();
 
         }
+
+        private void btnVerStock_Click(object sender, EventArgs e)
+        {
+
+            Bebida bebidas = new Bebida();
+            Comida comidas = new Comida();
+            this.rchListaStock.Text += bebidas.MostrarStock() + comidas.MostrarStock();
+        }
     }
 }

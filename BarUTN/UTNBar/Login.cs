@@ -18,7 +18,8 @@ namespace UTNBar
         private void Login_Load(object sender, EventArgs e)
         {
             Empleado.HardcodearEmpleados();
-            Administrador.HardcodearAdministradores();            
+            Administrador.HardcodearAdministradores();        
+            
 
         }
 
