@@ -1,9 +1,9 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace UTNBar
 {
@@ -15,16 +15,18 @@ namespace UTNBar
         Dictionary<int, bool> mesasDisponibles;
         Dictionary<int, bool> barraDisponible;
 
-
+        /// <summary>
+        /// Constructor que recibe un usuario para luego trabajar con él y otros atributos.
+        /// </summary>
+        /// <param name="usuario"></param>
         public Acceso(Usuario usuario)
         {
             InitializeComponent();
             botonesMesas = new Dictionary<int, Button>();
             botonesBarra = new Dictionary<int, Button>();
-            HardcodearMesas();
-            HarcodearBarra();
+            HardcodearBotoneraMesas();
+            HardcodearBotoneraBarra();
             this.tipoUsuario = SetTipoUsuario(usuario);
-
         }
 
         private void Acceso_Load(object sender, EventArgs e)
@@ -42,13 +44,13 @@ namespace UTNBar
                 this.btnVerEmp.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
             }
-
-
         }
 
-        private void HardcodearMesas()
+        /// <summary>
+        /// Agrega todos los botones tipo mesa al diccionario botonesMesas
+        /// </summary>
+        private void HardcodearBotoneraMesas()
         {
-
             botonesMesas.Add(1, this.btnMesa1);
             botonesMesas.Add(2, this.btnMesa2);
             botonesMesas.Add(3, this.btnMesa3);
@@ -66,15 +68,23 @@ namespace UTNBar
             botonesMesas.Add(15, this.btnMesa15);
         }
 
-        private void HarcodearBarra() {
+        /// <summary>
+        /// Agrega todos los botones tipo barra al diccionario botonesBarra
+        /// </summary>
+        private void HardcodearBotoneraBarra()
+        {
             botonesBarra.Add(1, this.btnBarra16);
             botonesBarra.Add(2, this.btnBarra17);
             botonesBarra.Add(3, this.btnBarra18);
             botonesBarra.Add(4, this.btnBarra19);
             botonesBarra.Add(5, this.btnBarra20);
-        
         }
 
+        /// <summary>
+        /// Función que analiza si el valor que devuelve mesasDisponibles = Mesa.MesasOcupadas, es null o no. 
+        /// Si es null, significa que la mesa no tiene cliente, por ende está libre.
+        /// Color Peru = libre / Color Beige = Ocupada
+        /// </summary>
         private void DisponibilidadDeMesas()
         {
             mesasDisponibles = Mesa.MesasOcupadas();
@@ -82,15 +92,19 @@ namespace UTNBar
             foreach (KeyValuePair<int, bool> mesa in mesasDisponibles)
             {
                 if (mesa.Value)
+                {
                     botonesMesas[mesa.Key].BackColor = Color.Peru; //libres
+                }
                 else
+                {
                     botonesMesas[mesa.Key].BackColor = Color.Beige; //ocupadas
+                }
             }
         }
 
         /// <summary>
         /// Función que analiza si el valor que devuelve barraDisponible = Barra.BarraOcupada, es null o no. 
-        /// Si es null, significa que la mesa no tiene cliente, por ende está libre.
+        /// Si es null, significa que la posición de la barra no tiene cliente, por ende está libre.
         /// Color Peru = libre / Color Beige = Ocupada
         /// </summary>
         private void DisponibilidadDeBarra()
@@ -100,30 +114,41 @@ namespace UTNBar
             foreach (KeyValuePair<int, bool> barra in barraDisponible)
             {
                 if (barra.Value)
+                {
                     botonesBarra[barra.Key].BackColor = Color.Peru;
+                }
                 else
+                {
                     botonesBarra[barra.Key].BackColor = Color.Beige;
+                }
             }
         }
+
+        /// <summary>
+        /// Función que recibe un tipo de usuario, y en base a eso, agregá el título
+        /// correspondiente al formulario, y retorna el tipo de usuario.
+        /// </summary>
+        /// <param name="usuario"> Usuario de cual se analizará el tipo </param>
+        /// <returns>Retorna el usuario</returns>
         public Usuario SetTipoUsuario(Usuario usuario)
         {
 
             if (usuario is Administrador)
             {
-
                 this.Text = "Menú Administrador";
                 return usuario;
-
-
             }
             else
             {
                 this.Text = "Menú Empleado";
                 return usuario;
-
             }
         }
 
+        /// <summary>
+        /// Botón que a través de un MessageBox, mostrará sólo al Administrador,
+        /// los empleados actuales del bar.
+        /// </summary>
         private void btnVerEmp_Click(object sender, EventArgs e)
         {
             Usuario empleado = new Empleado();
@@ -132,34 +157,27 @@ namespace UTNBar
 
         }
 
-
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Botón que abrirá un formulario para ver y administrar el stock:
+        ///El administrador podrá acceder a:
+        /// Un control de stock y posibilidad de agregar nuevos productos.
+        /// El empleado:
+        /// Sólo control de Stock.
+        /// </summary>
+        private void btnControlDeStock(object sender, EventArgs e)
         {
-
-            //if (tipoUsuario is Administrador)
-            //{
-            //    ControlStock stock = new ControlStock(tipoUsuario);
-            //    stock.ShowDialog();
-
-
-            //}
-            //else
-            //{
-            //    ControlStock stock = new ControlStock(tipoUsuario);
-            //    stock.ShowDialog();
-
-            //}
-
             ControlStock stock = new ControlStock(tipoUsuario);
             stock.ShowDialog();
-
         }
 
+        /// <summary>
+        /// Evento donde agruparemos el clickeo de cualquier botón-ubicación de mesa o barra,
+        /// se analizará esa ubicación, y acorde a eso se abrirá la misma.
+        /// </summary>
         private void btnUbicacion(object sender, EventArgs e)
         {
             SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLB\Sonidos\bipmesa.wav");
             player.Play();
-
 
             Button boton = (Button)sender;
 
@@ -171,6 +189,7 @@ namespace UTNBar
                     ubicacionForm.ShowDialog();
                 }
             }
+
             foreach (KeyValuePair<int, Button> item in botonesBarra)
             {
                 if (item.Value == boton)
@@ -181,33 +200,37 @@ namespace UTNBar
             }
         }
 
+        /// <summary>
+        /// Botón que mostrará el usuario logueado actualmente
+        /// </summary>
         private void btnUsuarioLogeado_Click(object sender, EventArgs e)
         {
             if (tipoUsuario is Administrador)
             {
-
-                //string cadena = $"Usuario logueado: {Administrador.listaAdministradores[0].user}, {Administrador.listaAdministradores[0].nombre} {Administrador.listaAdministradores[0].apellido}";
                 string cadena = Administrador.listaAdministradores[0].MostrarDato();
                 MessageBox.Show(cadena, "Usuario logueado tipo Administrador");
             }
             else
             {
-                //string cadena = $"Usuario logueado: {Empleado.listaEmpleados[0].user}, {Empleado.listaEmpleados[0].nombre} {Empleado.listaEmpleados[0].apellido}";
                 string cadena = Empleado.listaEmpleados[0].MostrarDato();
                 MessageBox.Show(cadena, "Usuario logueado tipo Empleado");
             }
         }
 
-
+        /// <summary>
+        /// Botón que cerrará toda la aplicación.
+        /// </summary>
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Botón que irá un pasó atrás en la aplicación.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-
         }
     }
 }

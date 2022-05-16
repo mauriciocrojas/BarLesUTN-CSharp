@@ -69,6 +69,13 @@ namespace UTNBar
 
         }
 
+        /// <summary>
+        /// Función que recibe un número de ubicación, y en base a ese parámetro,
+        /// modifica el Título del formulario, guarda el tipo de ubicación,
+        /// y retorna el número de la ubicación.
+        /// </summary>
+        /// <param name="numeroUbicacion"> Número de ubicación </param>
+        /// <returns>Retorna número de ubicación</returns>
         public int SiEsMesaOBarra(int numeroUbicacion)
         {
 
@@ -201,13 +208,13 @@ namespace UTNBar
             {
                 Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente (1, "A determinar"));
 
-                MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock: {stockNuevoComida}, pedido: {nombreComida}");
+                MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock actual: {stockNuevoComida}, pedido: {nudComidas.Value} {nombreComida}");
 
             }
             else if (tipoUbicacion is Barra)
             {
                 Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
-                MessageBox.Show($"Barra {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock: {stockNuevoBebida}, pedido: {nombreBebida}");
+                MessageBox.Show($"Barra {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock actual: {stockNuevoBebida}, pedido: {nudBebidas.Value} {nombreBebida}");
 
             }
         }

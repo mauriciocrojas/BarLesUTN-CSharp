@@ -299,7 +299,7 @@
             this.btnControlStock.TabIndex = 22;
             this.btnControlStock.Text = "Control de Stock";
             this.btnControlStock.UseVisualStyleBackColor = true;
-            this.btnControlStock.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            this.btnControlStock.Click += new System.EventHandler(this.btnControlDeStock);
             // 
             // btnVerEmp
             // 
