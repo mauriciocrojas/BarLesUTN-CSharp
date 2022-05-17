@@ -103,8 +103,9 @@ namespace UTNBar
         /// </summary>
         private void btnHacerPedido_Click(object sender, EventArgs e)
         {
-
-            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLBP\Sonidos\bloop.wav");
+            string sonido = AppDomain.CurrentDomain.BaseDirectory + @"Sonidos\bloop.wav";
+            //MessageBox.Show(sonido);
+            SoundPlayer player = new System.Media.SoundPlayer(sonido);
             player.Play();
             HacerPedido();
 

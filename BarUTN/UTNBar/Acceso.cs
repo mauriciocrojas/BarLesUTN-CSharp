@@ -176,7 +176,8 @@ namespace UTNBar
         /// </summary>
         private void btnUbicacion(object sender, EventArgs e)
         {
-            SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLBP\Sonidos\bipmesa.wav");
+            string sonido = AppDomain.CurrentDomain.BaseDirectory + @"Sonidos\bipmesa.wav";
+            SoundPlayer player = new System.Media.SoundPlayer(sonido);
             player.Play();
 
             Button boton = (Button)sender;
