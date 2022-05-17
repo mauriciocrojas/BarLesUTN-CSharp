@@ -10,16 +10,18 @@ namespace Entidades
         protected decimal peso;
         protected ETipoBebida tipo;
 
-        public Bebida()
+        static Bebida()
         {
             listaBebidas = new List<Bebida>();
+        }
+        public Bebida()
+        {
 
         }
         public Bebida(string nombre, decimal peso, ETipoBebida tipo, decimal stock, decimal precio) : base(nombre, stock, precio)
         {
             this.peso = peso;
             this.tipo = tipo;
-            listaBebidas = new List<Bebida>();
         }
 
 

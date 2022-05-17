@@ -126,7 +126,8 @@ namespace UTNBar
                 bool SiONo = this.cmbSal.SelectedIndex == 1 ? true : false;
 
                 Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
-                this.rchListaStock.Text += bebida.MostrarStock() + comida.MostrarStock();
+                //string cadena = bebida.MostrarStock() + comida.MostrarStock();
+                this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
             }
             else if (this.rdbBebida.Checked)
             {
@@ -144,7 +145,7 @@ namespace UTNBar
                         break;
                 }
                 Bebida.AgregarNuevaBebida(this.txtNombreBebida.Text, this.nudPesoBebida.Value, tipo, this.nudStockBebida.Value, this.nudPrecioBebida.Value);
-                this.rchListaStock.Text += bebida.MostrarStock() + comida.MostrarStock();
+                this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
             }
         }
 

@@ -8,15 +8,17 @@ namespace Entidades
         protected bool sinSal;
         public static List<Comida> listaComidas;
 
-        public Comida()
+        static Comida()
         {
             listaComidas = new List<Comida>();
+        }
+        public Comida()
+        {
 
         }
         public Comida(string nombre, bool sinSal, decimal stock, decimal precio) : base(nombre, stock, precio)
         {
             this.sinSal = sinSal;
-            listaComidas = new List<Comida>();
         }
 
         public static void HardcodearComidas()
