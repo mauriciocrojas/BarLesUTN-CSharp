@@ -1,7 +1,7 @@
 ﻿using Entidades;
 using System;
-using System.Windows.Forms;
 using System.Media;
+using System.Windows.Forms;
 
 namespace UTNBar
 {
@@ -43,8 +43,7 @@ namespace UTNBar
 
             this.cmbMetodoDePago.DataSource = Enum.GetValues(typeof(MetodoDePago));
 
-            Comida.HardcodearComidas();
-            Bebida.HardcodearBebidas();
+
 
             foreach (Comida comida in Comida.listaComidas)
             {
@@ -107,7 +106,7 @@ namespace UTNBar
             SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\maurojas\Documents\Alumni\PPLBP\Sonidos\bloop.wav");
             player.Play();
             HacerPedido();
-            
+
         }
 
         /// <summary>
@@ -117,11 +116,11 @@ namespace UTNBar
         {
             MetodoDePago metodo;
             decimal stockNuevoComida = 0;
-            decimal precioTotalComida = 0; 
+            decimal precioTotalComida = 0;
             decimal stockNuevoBebida = 0;
             decimal precioTotalBebida = 0;
-            string nombreBebida ="";
-            string nombreComida="";
+            string nombreBebida = "";
+            string nombreComida = "";
 
             switch (this.cmbMetodoDePago.Text)
             {
@@ -218,16 +217,13 @@ namespace UTNBar
 
             if (tipoUbicacion is Mesa)
             {
-                Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente (1, "A determinar"));
-
+                Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
                 MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock actual: {stockNuevoComida}, pedido: {nudComidas.Value} {nombreComida}");
-
             }
             else if (tipoUbicacion is Barra)
             {
                 Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
                 MessageBox.Show($"Barra {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock actual: {stockNuevoBebida}, pedido: {nudBebidas.Value} {nombreBebida}");
-
             }
         }
 
@@ -237,7 +233,6 @@ namespace UTNBar
         /// </summary>
         public void SiQuiereComidaOBebida()
         {
-
             if (tipoUbicacion is Mesa)
             {
                 if (chkComida.Checked && chkBebida.Checked)
@@ -278,7 +273,6 @@ namespace UTNBar
         private void chkComidaBebida_CheckedChanged(object sender, EventArgs e)
         {
             SiQuiereComidaOBebida();
-
         }
 
 
@@ -288,7 +282,6 @@ namespace UTNBar
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         /// <summary>
@@ -297,7 +290,6 @@ namespace UTNBar
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-
         }
     }
 }

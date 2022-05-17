@@ -53,7 +53,6 @@
             this.lblStock = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnVerStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioComida)).BeginInit();
             this.grpAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockBebida)).BeginInit();
@@ -298,23 +297,15 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnVerStock
+            // btnActualizarStock
             // 
-            this.btnVerStock.Location = new System.Drawing.Point(19, 358);
-            this.btnVerStock.Name = "btnVerStock";
-            this.btnVerStock.Size = new System.Drawing.Size(75, 23);
-            this.btnVerStock.TabIndex = 31;
-            this.btnVerStock.Text = "Ver stock";
-            this.btnVerStock.UseVisualStyleBackColor = true;
-            this.btnVerStock.Click += new System.EventHandler(this.btnVerStock_Click);
-            // 
+
             // ControlStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(505, 433);
-            this.Controls.Add(this.btnVerStock);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblStock);
@@ -365,6 +356,5 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnVerStock;
     }
 }

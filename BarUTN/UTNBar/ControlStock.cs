@@ -46,9 +46,6 @@ namespace UTNBar
             Bebida bebidas = new Bebida();
             Comida comidas = new Comida();
 
-            Bebida.HardcodearBebidas();
-            Comida.HardcodearComidas();
-
             this.rchListaStock.Text = bebidas.MostrarStock() + comidas.MostrarStock();
 
             if (tipoUsuario is Administrador)
@@ -126,7 +123,6 @@ namespace UTNBar
                 bool SiONo = this.cmbSal.SelectedIndex == 1 ? true : false;
 
                 Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
-                //string cadena = bebida.MostrarStock() + comida.MostrarStock();
                 this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
             }
             else if (this.rdbBebida.Checked)
@@ -165,14 +161,12 @@ namespace UTNBar
             Application.Exit();
         }
 
-        /// <summary>
-        /// Botón que llamaría el stock para verlo
-        /// </summary>
-        private void btnVerStock_Click(object sender, EventArgs e)
-        {
-            Bebida bebidas = new Bebida();
-            Comida comidas = new Comida();
-            this.rchListaStock.Text += bebidas.MostrarStock() + comidas.MostrarStock();
-        }
+        //private void btnActualizarStock(object sender, EventArgs e)
+        //{
+        //    Comida comidas = new Comida();
+        //    Bebida bebidas = new Bebida();
+
+        //    this.rchListaStock.Text = comidas.MostrarStock() + bebidas.MostrarStock();
+        //}
     }
 }

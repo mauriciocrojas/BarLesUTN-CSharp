@@ -11,6 +11,7 @@ namespace Entidades
         static Comida()
         {
             listaComidas = new List<Comida>();
+            Comida.HardcodearComidas();
         }
         public Comida()
         {

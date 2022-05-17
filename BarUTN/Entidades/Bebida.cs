@@ -13,6 +13,7 @@ namespace Entidades
         static Bebida()
         {
             listaBebidas = new List<Bebida>();
+            Bebida.HardcodearBebidas();
         }
         public Bebida()
         {
