@@ -30,7 +30,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"Nombre: {nombre}, Apellido: {apellido}, user: {user}, ");
+            sb.Append($"Nombre: {NombreCompleto}, user: {user}, ");
 
             return sb.ToString();
         }

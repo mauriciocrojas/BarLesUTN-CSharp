@@ -48,9 +48,7 @@ namespace Entidades
 
             foreach (Empleado empleado in listaEmpleados)
             {
-                //string auxSal = comida.sinSal ? "sin sal" : "con sal";
                 sb.AppendLine($"{empleado.MostrarDato()}");
-                //sb.AppendLine($"Empleado: Nombre: {empleado.nombre}, Nombre: {empleado.apellido}, usuario: {empleado.user}");
             }
 
             return sb.ToString();
