@@ -40,11 +40,6 @@ namespace UTNBar
                     acceso.ShowDialog();
                 }
             }
-            else
-            {
-                System.Media.SystemSounds.Exclamation.Play();
-                MessageBox.Show("Usuario incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
         }
 
         /// <summary>
@@ -103,7 +98,17 @@ namespace UTNBar
             {
                 return true;
             }
-            return false;
+            else if (String.IsNullOrEmpty(usuario) && String.IsNullOrEmpty(password))
+            {
+                System.Media.SystemSounds.Exclamation.Play();
+                MessageBox.Show("Campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else {
+                System.Media.SystemSounds.Exclamation.Play();
+                MessageBox.Show("Campos incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
         }
 
         /// <summary>
