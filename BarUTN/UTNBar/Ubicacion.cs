@@ -106,12 +106,7 @@ namespace UTNBar
         /// </summary>
         private void btnHacerPedido_Click(object sender, EventArgs e)
         {
-            string sonido = AppDomain.CurrentDomain.BaseDirectory + @"Sonidos\bloop.wav";
-            //MessageBox.Show(sonido);
-            SoundPlayer player = new System.Media.SoundPlayer(sonido);
-            player.Play();
             HacerPedido();
-
         }
 
         /// <summary>
@@ -128,6 +123,9 @@ namespace UTNBar
             string nombreBebida = "Sin pedido";
             string nombreComida = "Sin pedido";
             bool UsaEstacionamiento = false;
+
+            string sonido = AppDomain.CurrentDomain.BaseDirectory + @"Sonidos\bloop.wav";
+            SoundPlayer soundOk = new System.Media.SoundPlayer(sonido);
 
             switch (this.cmbMetodoDePago.Text)
             {
@@ -198,36 +196,86 @@ namespace UTNBar
             {
                 if (chkComida.Checked && chkBebida.Checked)
                 {
-                    precioTotalComidaYBebida += precioTotalComida + precioTotalBebida;
+                    if (!(String.IsNullOrEmpty(this.cmbBebidas.Text) && String.IsNullOrEmpty(this.cmbComidas.Text)) && this.nudBebidas.Value != 0 && this.nudComidas.Value != 0)
+                    {
+                        soundOk.Play();
 
-                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComidaYBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida}), ({nudBebidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalComidaYBebida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}, Stock actual de {nombreBebida}: {stockNuevoBebida}\n" +
-                        $"Estacionamiento: {SiONoEstacionamieento}");
+                        precioTotalComidaYBebida += precioTotalComida + precioTotalBebida;
+
+                        Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComidaYBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
+                        MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida}), ({nudBebidas.Value}, {nombreBebida})\n" +
+                            $"Precio: ${precioTotalComidaYBebida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}, Stock actual de {nombreBebida}: {stockNuevoBebida}\n" +
+                            $"Estacionamiento: {SiONoEstacionamieento}", "Orden exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        SystemSounds.Exclamation.Play();
+                        MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else if (chkComida.Checked && !chkBebida.Checked)
                 {
-                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida})\n" +
-                        $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}\n" +
-                        $"Estacionamiento: {SiONoEstacionamieento}");
+                    if (!String.IsNullOrEmpty(this.cmbComidas.Text) && this.nudComidas.Value != 0)
+                    {
+                        soundOk.Play();
+
+                        Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
+                        MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida})\n" +
+                            $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}\n" +
+                            $"Estacionamiento: {SiONoEstacionamieento}", "Orden exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        SystemSounds.Exclamation.Play();
+                        MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else if (!chkComida.Checked && chkBebida.Checked)
                 {
-                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
-                        $"Estacionamiento: {SiONoEstacionamieento}");
+                    if (!String.IsNullOrEmpty(this.cmbBebidas.Text) && this.nudBebidas.Value != 0)
+                    {
+                        soundOk.Play();
+
+                        Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(1, "A determinar"));
+                        MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreBebida})\n" +
+                            $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
+                            $"Estacionamiento: {SiONoEstacionamieento}", "Orden exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        SystemSounds.Exclamation.Play();
+                        MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    SystemSounds.Exclamation.Play();
+                    MessageBox.Show("No se seleccionó ningún producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (tipoUbicacion is Barra)
             {
                 if (chkBebida.Checked)
                 {
-                    Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
-                    MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
-                        $"Estacionamiento: {SiONoEstacionamieento}");
+                    if (!String.IsNullOrEmpty(this.cmbBebidas.Text) && this.nudBebidas.Value != 0)
+                    {
+                        soundOk.Play();
+
+                        Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
+                        MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
+                            $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
+                            $"Estacionamiento: {SiONoEstacionamieento}", "Orden exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        SystemSounds.Exclamation.Play();
+                        MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    SystemSounds.Exclamation.Play();
+                    MessageBox.Show("No se seleccionó ningún producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
