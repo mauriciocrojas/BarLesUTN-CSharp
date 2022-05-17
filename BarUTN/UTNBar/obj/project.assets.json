@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\PPLBP\\BarUTN\\UTNBar\\UTNBar.csproj",
+      "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\BarUTN\\UTNBar\\UTNBar.csproj",
       "projectName": "UTNBar",
-      "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PPLBP\\BarUTN\\UTNBar\\UTNBar.csproj",
+      "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\BarUTN\\UTNBar\\UTNBar.csproj",
       "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PPLBP\\BarUTN\\UTNBar\\obj\\",
+      "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\BarUTN\\UTNBar\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\maurojas\\Documents\\Alumni\\PPLBP\\BarUTN\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PPLBP\\BarUTN\\Entidades\\Entidades.csproj"
+            "C:\\Users\\maurojas\\Documents\\Alumni\\BarUTN\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\BarUTN\\Entidades\\Entidades.csproj"
             }
           }
         }

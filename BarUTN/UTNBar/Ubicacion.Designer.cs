@@ -150,9 +150,9 @@
             this.chkEstacionamiento.AutoSize = true;
             this.chkEstacionamiento.Location = new System.Drawing.Point(29, 128);
             this.chkEstacionamiento.Name = "chkEstacionamiento";
-            this.chkEstacionamiento.Size = new System.Drawing.Size(146, 19);
+            this.chkEstacionamiento.Size = new System.Drawing.Size(207, 19);
             this.chkEstacionamiento.TabIndex = 11;
-            this.chkEstacionamiento.Text = "¿Usa estacionamiento?";
+            this.chkEstacionamiento.Text = "¿Usa estacionamiento? Costo $500";
             this.chkEstacionamiento.UseVisualStyleBackColor = true;
             // 
             // btnVolver

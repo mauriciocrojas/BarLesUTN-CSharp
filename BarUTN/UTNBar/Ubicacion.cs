@@ -120,9 +120,10 @@ namespace UTNBar
             decimal precioTotalComida = 0;
             decimal stockNuevoBebida = 0;
             decimal precioTotalBebida = 0;
+            decimal precioTotalComidaYBebida = 0;
             string nombreBebida = "Sin pedido";
             string nombreComida = "Sin pedido";
-
+            bool UsaEstacionamiento = false;
 
             switch (this.cmbMetodoDePago.Text)
             {
@@ -157,37 +158,72 @@ namespace UTNBar
                 }
             }
 
-            //if (chkEstacionamiento.Checked)
-            //{
-            //    precioTotalComida += 500;
-            //    precioTotalBebida += 500;
-            //}
+            if (chkEstacionamiento.Checked)
+            {
+                if (tipoUbicacion is Mesa)
+                {
+                    if (chkComida.Checked && chkBebida.Checked)
+                    {
+                        precioTotalComidaYBebida += 500;
+                    }
+                    else if (chkComida.Checked && !chkBebida.Checked)
+                    {
+                        precioTotalComida += 500;
+
+                    }
+                    else if (!chkComida.Checked && chkBebida.Checked)
+                    {
+                        precioTotalBebida += 500;
+
+                    }
+                }
+                else if (tipoUbicacion is Barra)
+                {
+                    if (!chkComida.Checked && chkBebida.Checked)
+                    {
+                        precioTotalBebida += 500;
+
+                    }
+                }
+                UsaEstacionamiento = true;
+            }
+
+            string SiONoEstacionamieento = UsaEstacionamiento ? "Sí" : "No";
 
             if (tipoUbicacion is Mesa)
             {
                 if (chkComida.Checked && chkBebida.Checked)
                 {
-                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida + precioTotalBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida + precioTotalBebida}, stock actual comida: {stockNuevoComida}, " +
-                        $"stock actual bebida: {stockNuevoBebida}, pedido: {nudComidas.Value} {nombreComida}, {nudBebidas.Value} {nombreBebida}");
+                    precioTotalComidaYBebida += precioTotalComida + precioTotalBebida;
+
+                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComidaYBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida}), ({nudBebidas.Value}, {nombreBebida})\n" +
+                        $"Precio: ${precioTotalComidaYBebida}, Método de pago: {metodo}\nStock actual comida: {stockNuevoComida}, Stock actual bebida: {stockNuevoBebida}\n" +
+                        $"Estacionamiento: {SiONoEstacionamieento}");
                 }
                 else if (chkComida.Checked && !chkBebida.Checked)
                 {
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock actual: {stockNuevoComida}, pedido: {nudComidas.Value} {nombreComida}");
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida})\n" +
+                        $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual: {stockNuevoComida}\n" +
+                        $"Estacionamiento: {SiONoEstacionamieento}");
 
                 }
                 else if (!chkComida.Checked && chkBebida.Checked)
                 {
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(1, "A determinar"));
-                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock actual: {stockNuevoBebida}, pedido: {nudComidas.Value} {nombreBebida}");
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreBebida})\n" +
+                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
+                        $"Estacionamiento: {SiONoEstacionamieento}");
 
                 }
             }
             else if (tipoUbicacion is Barra)
             {
                 Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
-                MessageBox.Show($"Barra {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock actual: {stockNuevoBebida}, pedido: {nudBebidas.Value} {nombreBebida}");
+                MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
+                    $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
+                    $"Estacionamiento: {SiONoEstacionamieento}");
             }
         }
 
