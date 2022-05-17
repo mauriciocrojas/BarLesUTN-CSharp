@@ -120,8 +120,9 @@ namespace UTNBar
             decimal precioTotalComida = 0;
             decimal stockNuevoBebida = 0;
             decimal precioTotalBebida = 0;
-            string nombreBebida = "";
-            string nombreComida = "";
+            string nombreBebida = "Sin pedido";
+            string nombreComida = "Sin pedido";
+
 
             switch (this.cmbMetodoDePago.Text)
             {
@@ -138,88 +139,50 @@ namespace UTNBar
 
             foreach (Comida comida in Comida.listaComidas)
             {
-                if (cmbComidas.Text == comida.nombre)
+                if (comida.nombre == cmbComidas.Text)
                 {
                     nombreComida = comida.nombre;
                     stockNuevoComida = comida.stock - nudComidas.Value;
                     precioTotalComida = comida.precio * nudComidas.Value;
                 }
-                else
-                {
-                    nombreComida = "Inexistente";
-                    stockNuevoComida = 0;
-                    precioTotalComida = 0;
-                }
             }
 
             foreach (Bebida bebida in Bebida.listaBebidas)
             {
-                if (cmbBebidas.Text == bebida.nombre)
+                if (bebida.nombre == cmbBebidas.Text)
                 {
                     nombreBebida = bebida.nombre;
                     stockNuevoBebida = bebida.stock - nudBebidas.Value;
                     precioTotalBebida = bebida.precio * nudBebidas.Value;
                 }
-                else
-                {
-                    nombreBebida = "Inexistente";
-                    stockNuevoBebida = 0;
-                    precioTotalBebida = 0;
-                }
             }
 
-            //switch (cmbComidas.Text)
+            //if (chkEstacionamiento.Checked)
             //{
-            //    case "Verduras al vapor":
-            //        nombreComida = "Verduras al vapor";
-            //        stockNuevoComida = Comida.listaComidas[0].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[0].precio * nudComidas.Value;
-            //        break;
-            //    case "Pastel de choclo":
-            //        nombreComida = "Pastel de choclo";
-            //        stockNuevoComida = Comida.listaComidas[1].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[1].precio * nudComidas.Value;
-            //        break;
-            //    case "Merluza con puré":
-            //        nombreComida = "Merluza con puré";
-            //        stockNuevoComida = Comida.listaComidas[2].stock - nudComidas.Value;
-            //        precioTotalComida = Comida.listaComidas[2].precio * nudComidas.Value;
-            //        break;
-            //    default:
-            //        nombreComida = "Inexistente";
-            //        stockNuevoComida = 0;
-            //        precioTotalComida = 0;
-            //        break;
-            //}
-
-            //switch (cmbBebidas.Text)
-            //{
-            //    case "Gin tonic":
-            //        nombreBebida = "Gin tonic";
-            //        stockNuevoBebida = Bebida.listaBebidas[0].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[0].precio * nudBebidas.Value;
-            //        break;
-            //    case "Seven Up":
-            //        nombreBebida = "Seven Up";
-            //        stockNuevoBebida = Bebida.listaBebidas[1].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[1].precio * nudBebidas.Value;
-            //        break;
-            //    case "Agua sin gas":
-            //        nombreBebida = "Agua sin gas";
-            //        stockNuevoBebida = Bebida.listaBebidas[2].stock - nudBebidas.Value;
-            //        precioTotalBebida = Bebida.listaBebidas[2].precio * nudBebidas.Value;
-            //        break;
-            //    default:
-            //        nombreBebida = "Inexistente";
-            //        stockNuevoBebida = 0;
-            //        precioTotalBebida = 0;
-            //        break;
+            //    precioTotalComida += 500;
+            //    precioTotalBebida += 500;
             //}
 
             if (tipoUbicacion is Mesa)
             {
-                Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
-                MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock actual: {stockNuevoComida}, pedido: {nudComidas.Value} {nombreComida}");
+                if (chkComida.Checked && chkBebida.Checked)
+                {
+                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida + precioTotalBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida + precioTotalBebida}, stock actual comida: {stockNuevoComida}, " +
+                        $"stock actual bebida:{stockNuevoBebida}, pedido: {nudComidas.Value} {nombreComida}, {nudBebidas.Value} {nombreBebida}");
+                }
+                else if (chkComida.Checked && !chkBebida.Checked)
+                {
+                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida}, stock actual: {stockNuevoComida}, pedido: {nudComidas.Value} {nombreComida}");
+
+                }
+                else if (!chkComida.Checked && chkBebida.Checked)
+                {
+                    Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(1, "A determinar"));
+                    MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalBebida}, stock actual: {stockNuevoBebida}, pedido: {nudComidas.Value} {nombreBebida}");
+
+                }
             }
             else if (tipoUbicacion is Barra)
             {

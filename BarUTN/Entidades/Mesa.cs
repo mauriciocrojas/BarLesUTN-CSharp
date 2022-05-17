@@ -6,7 +6,7 @@ namespace Entidades
     {
         static Mesa[] mesas;
         Cliente cliente;
-
+        string nombreBebida;
 
         static Mesa()
         {
@@ -17,6 +17,12 @@ namespace Entidades
             : base(numeroUbicacion, metodoDePago, precio, stock, nombreComida)
         {
             this.cliente = cliente;
+        }
+        public Mesa(int numeroUbicacion, MetodoDePago metodoDePago, decimal precio, decimal stock, string nombreComida, string nombreBebida, Cliente cliente)
+            : base(numeroUbicacion, metodoDePago, precio, stock, nombreComida)
+        {
+            this.cliente = cliente;
+            this.nombreBebida = nombreBebida;
         }
         public Cliente Cliente
         {
