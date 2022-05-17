@@ -66,10 +66,13 @@ namespace UTNBar
             {
                 this.cmbComidas.Enabled = false;
                 this.nudComidas.Enabled = false;
-                this.chkBebida.Visible = false;
+                this.chkBebida.Visible = true;
                 this.chkComida.Visible = false;
+                this.cmbBebidas.Enabled = false;
+                this.nudBebidas.Enabled = false;
             }
 
+            this.chkEstacionamiento.Enabled = false;
 
 
         }
@@ -208,7 +211,6 @@ namespace UTNBar
                     MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida})\n" +
                         $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual: {stockNuevoComida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
-
                 }
                 else if (!chkComida.Checked && chkBebida.Checked)
                 {
@@ -216,15 +218,17 @@ namespace UTNBar
                     MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreBebida})\n" +
                         $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
-
                 }
             }
             else if (tipoUbicacion is Barra)
             {
-                Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
-                MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
-                    $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
-                    $"Estacionamiento: {SiONoEstacionamieento}");
+                if (chkBebida.Checked)
+                {
+                    Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
+                    MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
+                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
+                        $"Estacionamiento: {SiONoEstacionamieento}");
+                }
             }
         }
 
@@ -234,6 +238,15 @@ namespace UTNBar
         /// </summary>
         public void SiQuiereComidaOBebida()
         {
+            if (chkComida.Checked || chkBebida.Checked)
+            {
+                this.chkEstacionamiento.Enabled = true;
+            }
+            else if (!(chkComida.Checked && chkBebida.Checked))
+            {
+                this.chkEstacionamiento.Enabled = false;
+            }
+
             if (tipoUbicacion is Mesa)
             {
                 if (chkComida.Checked && chkBebida.Checked)
@@ -263,6 +276,19 @@ namespace UTNBar
                     this.nudComidas.Enabled = false;
                     this.cmbBebidas.Enabled = true;
                     this.nudBebidas.Enabled = true;
+                }
+            }
+            else
+            {
+                if (chkBebida.Checked)
+                {
+                    this.cmbBebidas.Enabled = true;
+                    this.nudBebidas.Enabled = true;
+                }
+                else
+                {
+                    this.cmbBebidas.Enabled = false;
+                    this.nudBebidas.Enabled = false;
                 }
             }
         }
