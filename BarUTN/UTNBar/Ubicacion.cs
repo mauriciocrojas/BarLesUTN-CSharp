@@ -169,7 +169,7 @@ namespace UTNBar
                 {
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida + precioTotalBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
                     MessageBox.Show($"Mesa {numeroUbicacion}, Método de pago: {metodo}, ${precioTotalComida + precioTotalBebida}, stock actual comida: {stockNuevoComida}, " +
-                        $"stock actual bebida:{stockNuevoBebida}, pedido: {nudComidas.Value} {nombreComida}, {nudBebidas.Value} {nombreBebida}");
+                        $"stock actual bebida: {stockNuevoBebida}, pedido: {nudComidas.Value} {nombreComida}, {nudBebidas.Value} {nombreBebida}");
                 }
                 else if (chkComida.Checked && !chkBebida.Checked)
                 {

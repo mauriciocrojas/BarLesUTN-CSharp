@@ -106,8 +106,6 @@ namespace UTNBar
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             AgregarNuevoProducto();
-            MessageBox.Show("Se agregó nuevo producto");
-
 
         }
 
@@ -124,6 +122,7 @@ namespace UTNBar
 
                 Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
                 this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
+                MessageBox.Show("Se agregó nueva comida");
             }
             else if (this.rdbBebida.Checked)
             {
@@ -142,6 +141,7 @@ namespace UTNBar
                 }
                 Bebida.AgregarNuevaBebida(this.txtNombreBebida.Text, this.nudPesoBebida.Value, tipo, this.nudStockBebida.Value, this.nudPrecioBebida.Value);
                 this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
+                MessageBox.Show("Se agregó nueva bebida");
             }
         }
 
