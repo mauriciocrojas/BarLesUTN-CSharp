@@ -118,30 +118,51 @@ namespace UTNBar
             Bebida bebida = new Bebida();
             if (this.rdbComida.Checked)
             {
-                bool SiONo = this.cmbSal.SelectedIndex == 1 ? true : false;
 
-                Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
-                this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
-                MessageBox.Show("Se agregó nueva comida");
+                if (!String.IsNullOrWhiteSpace(this.txtNombreComida.Text) && this.nudStockComida.Value != 0 && this.nudPrecioComida.Value != 0)
+                {
+                    bool SiONo = this.cmbSal.SelectedIndex == 1 ? true : false;
+
+                    Comida.AgregarNuevaComida(this.txtNombreComida.Text, SiONo, this.nudStockComida.Value, this.nudPrecioComida.Value);
+                    this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
+                    MessageBox.Show("Se agregó nueva comida", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (this.rdbBebida.Checked)
             {
-                ETipoBebida tipo;
-                switch (cmbTipoBebida.Text)
+                if (!String.IsNullOrWhiteSpace(this.txtNombreBebida.Text) && this.nudStockBebida.Value != 0
+                                    && this.nudPrecioBebida.Value != 0 && this.nudPesoBebida.Value != 0)
                 {
-                    case "Alcoholicas":
-                        tipo = ETipoBebida.Alcoholicas;
-                        break;
-                    case "Gasificadas":
-                        tipo = ETipoBebida.Gasificadas;
-                        break;
-                    default:
-                        tipo = ETipoBebida.Aguas;
-                        break;
+                    ETipoBebida tipo;
+                    switch (cmbTipoBebida.Text)
+                    {
+                        case "Alcoholicas":
+                            tipo = ETipoBebida.Alcoholicas;
+                            break;
+                        case "Gasificadas":
+                            tipo = ETipoBebida.Gasificadas;
+                            break;
+                        default:
+                            tipo = ETipoBebida.Aguas;
+                            break;
+                    }
+                    Bebida.AgregarNuevaBebida(this.txtNombreBebida.Text, this.nudPesoBebida.Value, tipo, this.nudStockBebida.Value, this.nudPrecioBebida.Value);
+                    this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
+                    MessageBox.Show("Se agregó nueva bebida", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                Bebida.AgregarNuevaBebida(this.txtNombreBebida.Text, this.nudPesoBebida.Value, tipo, this.nudStockBebida.Value, this.nudPrecioBebida.Value);
-                this.rchListaStock.Text = bebida.MostrarStock() + comida.MostrarStock();
-                MessageBox.Show("Se agregó nueva bebida");
+                else
+                {
+                    MessageBox.Show("Campos erróneos o faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se seleccionó ningún producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
