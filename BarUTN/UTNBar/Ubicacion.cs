@@ -202,21 +202,21 @@ namespace UTNBar
 
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComidaYBebida, stockNuevoComida, nombreComida, nombreBebida, new Cliente(1, "A determinar"));
                     MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida}), ({nudBebidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalComidaYBebida}, Método de pago: {metodo}\nStock actual comida: {stockNuevoComida}, Stock actual bebida: {stockNuevoBebida}\n" +
+                        $"Precio: ${precioTotalComidaYBebida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}, Stock actual de {nombreBebida}: {stockNuevoBebida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
                 }
                 else if (chkComida.Checked && !chkBebida.Checked)
                 {
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalComida, stockNuevoComida, nombreComida, new Cliente(1, "A determinar"));
                     MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreComida})\n" +
-                        $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual: {stockNuevoComida}\n" +
+                        $"Precio: ${precioTotalComida}, Método de pago: {metodo}\nStock actual de {nombreComida}: {stockNuevoComida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
                 }
                 else if (!chkComida.Checked && chkBebida.Checked)
                 {
                     Pedido pedido = new Mesa(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(1, "A determinar"));
                     MessageBox.Show($"Mesa {numeroUbicacion}, Cantidad: ({nudComidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
+                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
                 }
             }
@@ -226,7 +226,7 @@ namespace UTNBar
                 {
                     Pedido pedido = new Barra(this.numeroUbicacion, metodo, precioTotalBebida, stockNuevoBebida, nombreBebida, new Cliente(16, "A determinar)"));
                     MessageBox.Show($"Barra {numeroUbicacion}, Cantidad: ({nudBebidas.Value}, {nombreBebida})\n" +
-                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual: {stockNuevoBebida}\n" +
+                        $"Precio: ${precioTotalBebida}, Método de pago: {metodo}\nStock actual de {nombreBebida}: {stockNuevoBebida}\n" +
                         $"Estacionamiento: {SiONoEstacionamieento}");
                 }
             }
