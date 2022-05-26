@@ -13,4 +13,4 @@ Uso Propiedades para mostrar el nombre completo del usuario.
 Uso colecciones en listas y diccionarios, como los de comida y bebida, botoneras.
 Etc.
 
---Programa a terminar--
+--Programa y README.md a terminar--
